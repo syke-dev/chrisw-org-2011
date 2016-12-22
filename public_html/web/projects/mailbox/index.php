@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  
+    <?php require(getenv("CHRISW_HEADER")) ?>
+
+    <title> Kernel Message System </title>
+  
+  </head>
+  
+  <body>
+
+    <div id = "global_mainarea">
+    
+      <?php require(getenv("CHRISW_TITLE")) ?>
+      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      
+      <div id = "subpage_content">
+      
+        <center><h1> Kernel Message System </h1></center>
+        
+        <h2> Overview </h2>
+        
+        For an Operating Systems course, I modified the Linux kernel to include an inter-process messaging system.
+        
+        <h2> Process Mailbox </h2>
+        
+        The task_struct in the Linux Kernel was modified to include a mailbox structure that holds messages for processes.
+        Whenever a new process is forked, a new mailbox structure is allocated for that process.
+        All threads of a process share the same mailbox.
+        The mailbox for a process is deleted once all of the threads in the <i>thread group</i> are dead.
+        The mailboxes are synchronized using spinlocks.
+        
+        <h2> Mailbox and Messages </h2>
+        
+        This mailbox holds messages that the process has <i>received</i> in a linked list.<br>
+        
+        The API for the mailbox includes three system calls:
+        
+        <ol>
+          <li><b>int SendMsg(pid_t dest, void *body, int len, bool block)</b><br> 
+            Sends a message to the process of the ID <i>dest</i>. 
+            The message is pointed to by the argument <i>body</i>. 
+            The length of the message <i>len</i> must not exceed MAX_MSG_SIZE.
+            The <i>block</i> flag specifies whether or not the call should block and wait
+            to send the message if the recipient's mailbox is full.
+          </li><br>
+            
+          <li><b>int RcvMsg(pid_t *sender, void *msg, int *len, bool block)</b><br> 
+            Retreives a message from this process's mailbox.
+            The process ID of the sender is returned in the pid_t pointed to by <i>sender</i>.
+            The message is returned to the memory pointed to by <i>msg</i> which must be of size MAX_MSG_SIZE.
+            The length of the message is returned in the integer pointed to by <i>len</i>.
+            The <i>block</i> flag specifies whether or not the call should block and wait
+            for a message if this process's mailbox is empty.
+          </li><br>
+            
+          <li><b>int ManageMailbox(bool stop, int *count)</b><br> 
+            This system call allows a process to stop its mailbox and/or to query the number of messages in its mailbox.
+            If the <i>stop</i> flag is TRUE, the mailbox will cease to receive any more messages.
+            All messages left on a mailbox that has been stopped may still be retreived.
+            All blocked calls to <b>SendMsg</b> or <b>RcvMsg</b> for this mailbox will return immediatly with an error.
+
+          </li><br>
+          
+        </ol>
+        
+        <h2> Error Codes </h2>
+        
+        The three mailbox system calls return a zero on success or one of the following error codes:
+        
+        <ul>
+          <li><b>MAILBOX_FULL:</b> Returned when a <b>SendMsg</b> is performed on a full mailbox with <b>block</b> set to FALSE.</li><br>
+          <li><b>MAILBOX_EMPTY:</b> Returned when a <b>RcvMsg</b> is performed an empty mailbox with <b>block</b> set to FALSE.</li><br>
+          <li><b>MAILBOX_STOPPED:</b> 
+            Returned when a <b>SendMsg</b> is performed on a stopped mailbox. 
+            It is also returned to all blocked threads trying to send or receive to a mailbox that was just stopped.</li><br>
+          <li><b>MAILBOX_INVALID:</b> Returned when a <b>SendMsg</b> specifies an invalid process ID.</li><br>
+          <li><b>MSG_TOO_LONG:</b> Returned when a <b>SendMsg</b> attempts to send a message longer than MAX_MSG_SIZE.</li><br>
+          <li><b>MSG_ARG_ERROR:</b> Returned when an invalid pointer is given to any mailbox system call.</li><br>
+          <li><b>MAILBOX_ERROR:</b> Returned upon any other mailbox error..</li>
+          
+        </ul>
+
+        <h2> Installation </h2>
+        
+        <a href = "LinuxMailbox.zip">Download</a>
+        
+        <br><br>
+        
+        Provided are two patches for <i>Open Suse 10.3 - 2.6.22.13-0.3</i> that provide the implementation for the mailbox system.
+        Also included are "mailbox.h" that defines the mailbox interface and "mailbox.cpp" which defines the <i>user space</i> system calls.
+        
+      </div>
+      
+    </div>
+    
+    <?php require(getenv("CHRISW_FOOTER")) ?>
+    
+  </body>
+
+</html>

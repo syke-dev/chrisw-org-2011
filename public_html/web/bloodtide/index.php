@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  
+    <?php require(getenv("CHRISW_HEADER")) ?>
+    
+    <link rel = "stylesheet" type = "text/css" href = "bloodtide.css" />
+
+    <title> Blood Tide </title>
+  
+  </head>
+  
+  <body>
+
+    <div id = "global_mainarea">
+    
+      <img id = "btlogo" src = "media/Logo.gif" />
+      
+      <?php require(getenv("CHRISW_TITLE")) ?>
+      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      
+      <div id = "gamehome_content">
+      
+        <div id = "column_left">
+        
+          <h1> Overview </h1>
+        
+          <p>Blood Tide is a multiplayer, online, action, real-time strategy game for the PC. 
+          The game allows players to experience both the strategic management of an army in command mode 
+          and the fast-paced, action-packed combat on the battlefield alongside other troops in field mode.</p>
+          
+          <h1> Gameplay </h1>
+          
+          <p>Blood Tide is an online multiplayer game that pits two players against each other. 
+          Each player takes control of either the Human or Piscivian faction. 
+          Players are able to play two unique roles: tactical-commander and field-commander. 
+          As the tactical-commander, the player controls units and constructs buildings, 
+          like a real-time strategy game. As the field-commander, 
+          the player takes the role of one unit on the field and battles alongside the other units. 
+          This role plays like an action game with a third-person chase camera. 
+          The player can switch between the two roles to better utilize the functions of the tactical-commander and field-commander.</p>
+        
+        </div>
+        
+        <div id = "column_right" style = "text-align: center;">
+        
+          <iframe id = "main_video" src="http://www.youtube.com/embed/FG8LDgtrm5E?hd=1" frameborder="0" allowfullscreen></iframe>
+        
+          <br>
+        
+          <p><a href = "download.php">Download Game</a></p>
+
+        </div>
+        
+      </div>
+      
+      <?php require(getenv("PROJECT_NAV")) ?>
+    
+    </div>
+    
+    <?php require(getenv("CHRISW_FOOTER")) ?>
+    
+  </body>
+
+</html>

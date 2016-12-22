@@ -1,0 +1,9 @@
+<link rel = stylesheet type = "text/css" href = "http://chrisw.org/web/highslide/highslide.css" />
+    <script type = "text/javascript" src = "http://chrisw.org/web/highslide/highslide.js"></script>
+
+    <script type="text/javascript">
+      hs.graphicsDir = 'http://chrisw.org/web/highslide/graphics/';
+      hs.outlineType = 'outer-glow';
+
+      hs.showCredits = false;
+    </script>

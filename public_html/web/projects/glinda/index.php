@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  
+    <?php require(getenv("CHRISW_HEADER")) ?>
+
+    <title> Glinda </title>
+  
+  </head>
+  
+  <body>
+
+    <div id = "global_mainarea">
+    
+      <?php require(getenv("CHRISW_TITLE")) ?>
+      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      
+      <div id = "subpage_content">
+      
+        <center><h1>Glinda</h1></center>
+        
+        <h2> Overview </h2>
+        
+        Glinda is a name server that can be used for finding named resources and for sychronization between distributed processes.
+        
+        <h2> Using a Glinda Server </h2>
+        
+        A Glinda server is a database of attribute strings that can be accessed/modified by 4 operations:<br>
+        <ol>
+          <li><b>put key=value[&key=value]*</b><br> 
+            Stores an attribute string into the database. If more than one attribute is specified it is seperated by a '&' character.</li><br>
+          
+          <li><b>get *|key=value[&key=value]*</b><br> 
+            Returns the first string that matches the given <b>key=value</b> attribute(s). The order of attributes does not matter.
+            An argument of '*' matches any string: it may be used by itself to return any string or in the form <b>key=*</b> which returns any string with that key.
+            If no strings match the given query, the server responds with an "ok" status followed by no attribute string.</li><br>
+          
+          <li><b>list *|key=value</b><br> 
+            This operation functions similar to <i>get</i>, however, all strings that match the query string are returned.
+            If more than one string is returned, each string is seperated by a semicolon: name=chris;name=chris&age=22.</li><br>
+          
+          <li><b>take *|key=value[&key=value]*</b><br> 
+            This operation is nearly identical to <i>get</i>, except this operation causes the returned string to be deleted from the database.
+            Also, if no string matches the given attributes, the server will not respond causing the client to block waiting for a response.
+            The Glinda server mantains a list of blocked clients and their query strings. Everytime a string is <i>put</i>, the Glinda server will check to see
+            if a client can be unblocked and respond to that client.</li>
+          
+        </ol>
+        
+        <br>
+
+        <h2> Using Glinda to Coordinate a Compute Farm </h2>
+        
+        Building a compute farm with Glinda requires two components:
+        
+        <ol>
+          <li><b>Master:</b> Chops the workload into manageable chunks for worker nodes and then aggregates the results of the workers.
+          <li><b>Worker:</b> Any number of worker nodes to perform computations.
+        </ol>
+        
+        <center><img src = "media/ComputeFarm.jpg" width = "450"></center>
+        
+        <br>
+
+        <h2> Distributed Summation </h2>
+        
+        An example of a program that uses Glinda to coordinate a compute farm is a distributed summation.
+        This distributed summation is executed by a master program, which takes as input a domain of numbers to add together.
+        The master program then splits the numbers into ranges of 10 and <i>puts</i> the work on the Glinda server in the form:
+        type=work&beg=<i>n</i>&end=<i>n+9</i>. 
+        
+        <br><br>
+        
+        Any number of worker nodes will then be able to execute a <i>take</i> command and
+        pull the work off of the Glinda server. After performing the summation on the range, it will return the string with an appended
+        <i>val=n</i> attribute. The master program will finish as soon as it has taken all of the results off of the Glinda server
+        and added them together to calculate the final total.
+        
+        <br><br>
+        
+        <a href = "Glinda.zip"> Download Source </a>
+        
+        <br><br>
+        
+        Below is a possible time lapse when running 2 worker nodes and giving the master program a summation of 10-29. 
+        It provides the output: "summation of integers 10 to 29 = 390".
+        
+        <br><br>
+        
+        <img src = "media/DistributedSummation.jpg" width = "780">
+       
+      </div>
+
+    </div>
+    
+    <?php require(getenv("CHRISW_FOOTER")) ?>
+    
+  </body>
+
+</html>

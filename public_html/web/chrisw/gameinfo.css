@@ -1,0 +1,36 @@
+#gameinfo_content
+{
+  width: 600px;
+  position: relative;
+  margin-left: 10px;
+}
+
+#gameinfo_content h2
+{
+  #margin-left: 10px;
+}
+
+#gameinfo_content ul
+{
+  #padding: 0px;
+}
+
+#gameinfo_content li
+{
+  #list-style: none;
+}
+
+#gameinfo_content .thumbnails img
+{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 212px;
+  height: 132px;
+  border: 1px solid black;
+}
+
+#gameinfo_content .thumbnails img:hover
+{
+  border: 1px dashed black;
+}
+

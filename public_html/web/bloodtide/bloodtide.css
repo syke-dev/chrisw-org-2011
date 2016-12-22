@@ -1,0 +1,25 @@
+#global_title
+{
+  background: #33A1DE
+}
+
+#btlogo
+{
+  left: 50%;
+  margin-left: -113px;
+  position: absolute;
+  z-index: 1;
+}
+
+#bt_work ul
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#bt_work .category
+{
+  font-weight: bold;
+}
+
+

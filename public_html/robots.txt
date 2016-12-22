@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /web/chrisw
+Disallow: /web/fusioncharts
+Disallow: /web/jwplayer
+Disallow: /web/wordpress

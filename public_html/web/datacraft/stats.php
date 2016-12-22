@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  
+    <?php require(getenv("CHRISW_HEADER")) ?>
+    
+    <title> DataCraft </title>
+    
+    <link rel = stylesheet type = "text/css" href = "datacraft.css" />
+    
+    <script type = "text/javascript" src = "datacraft.js"></script>
+    <script type = "text/javascript" src = "queries.js"></script>
+    <script type = "text/javascript" src = "http://chrisw.org/web/fusioncharts/Charts/FusionCharts.js"></script>
+       
+  </head>
+
+  <body>
+
+    <div id = "global_mainarea">
+      
+      <?php require(getenv("CHRISW_TITLE")) ?>
+      <?php require(getenv("CHRISW_NAVBAR")) ?>
+    
+      <div style = "float: left; position: relative; height: 530px">
+
+        <div id = "page_queries">
+        
+          <b> Queries </b>
+          
+          <br><hr>
+
+          <a href = "javascript:query_enemy_kills();"
+            onmouseover= "javascript:desc('< Number of Kills per Enemy Type >')"
+            onmouseout = "javascript:desc_default()" >
+
+          Enemy Kills </a><br><hr>
+
+          <a href = "javascript:query_player_scores();"
+            onmouseover= "javascript:desc('< Player Scores Over Time >')"
+            onmouseout = "javascript:desc_default()" >
+
+          Player Scores </a><br><hr>
+
+          <a href = "javascript:query_enemies_on_board();"
+            onmouseover= "javascript:desc('< Number of Enemy Types on the Board at the Time of a Player\'s Death Per Game >')"
+            onmouseout = "javascript:desc_default()" >
+
+          Enemies on Board </a><br><hr>
+
+          <a href = "javascript:query_player_wep_freq();"
+            onmouseover= "javascript:desc('< Player Weapon Use Frequency >')"
+            onmouseout = "javascript:desc_default()" >
+
+          Player Weapon Frequency </a><br><hr>
+
+          <a href = "javascript:query_enemy_wep_freq();"
+            onmouseover= "javascript:desc('< Enemy Weapon Use Frequency >')"
+            onmouseout = "javascript:desc_default()" >
+
+          Enemy Weapon Frequency </a><br><hr>
+
+        </div>
+
+        <div id = "page_queries_desc"></div>
+        
+        <div id = "page_fusion_chart"></div>
+        
+        <script type="text/javascript">
+          desc_default();
+          query_player_scores();
+        </script>
+
+      </div>
+      
+      <?php require(getenv("PROJECT_NAV")) ?>
+
+    </div>
+    
+    <?php require(getenv("CHRISW_FOOTER")) ?>
+    
+  </body>
+
+</html>

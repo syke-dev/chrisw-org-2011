@@ -1,0 +1,123 @@
+#global_mainarea
+{
+  width: 800px;
+  margin: auto;
+  border: 1px solid black;
+}
+
+#global_title
+{
+  position: relative;
+  height: 100px;
+  background: #000000 url('http://www.chrisw.org/web/chrisw/media/ChriswLogo.jpg') no-repeat center top;
+}
+
+#global_navbar
+{
+  position: relative;
+  height: 32px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+ 
+#global_navbar ul
+{
+  padding: 0px;
+  margin: 0px;
+  height: 32px;
+  width: 100%;
+  background: url(/web/chrisw/media/navbar_bkgd.png) repeat-x;
+}
+
+#global_navbar li
+{
+  list-style: none;
+  float: left;
+  display: inline;
+  height: 32px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: Arial;
+  font-size: 1.0em;
+  border-right: 1px solid black;
+}
+
+#global_navbar a
+{
+  text-decoration: none;
+  padding-top: 5px;
+  display: block;
+  color: white;
+}
+
+#global_navbar a:hover
+{
+  color: black;
+}
+
+#global_navbar a:active
+{
+  font-weight: bold;
+}
+
+#global_footer
+{
+  width: 800px;
+  margin: auto;
+  margin-top: 5px;
+  clear: both;
+}
+
+.break
+{
+  clear: both;
+}
+
+/* Misc CSS [for Games] */ 
+
+#global_mainarea
+{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3em;
+}
+
+#global_navbar a
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a
+{
+  font-family: Times New Roman, serif;
+}
+
+h1
+{
+  font-family: Times New Roman, serif;
+}
+
+h2
+{
+  font-family: Times New Roman, serif;
+}
+
+h3
+{
+  font-family: Times New Roman, serif;
+}
+
+#subpage_content
+{
+  margin-left: 10px;
+}
+
+#project_navigation
+{
+  text-align: center;
+  border-top: 1px dashed black;
+  margin-top: 20px;
+  word-spacing: 5px;
+  clear: both;
+}
+
+

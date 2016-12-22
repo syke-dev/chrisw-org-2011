@@ -1,0 +1,190 @@
+/* Units Page */
+.unit_link
+{
+  float: left;
+  text-align: center;
+}
+
+#human_links
+{
+  margin-top: 20px;
+  float: left;
+  margin-bottom: 40px;
+  width: 384px;
+}
+
+#piscivian_links
+{
+  margin-top: 20px;
+  float: right;
+  margin-bottom: 40px;
+  width: 384px;
+}
+
+#global_mainarea h2
+{
+  text-align: center;
+}
+
+/* Individual Unit Page */
+#unit
+{
+  margin: 30px;
+}
+
+#unit_top
+{
+  width: 100%;
+  height: 450px;
+}
+
+#unit_left
+{
+  float: left;
+  height: 411px;
+  width: 150px;
+  text-align: center;
+}
+
+.unit_name_humans
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.5em;
+  color: red;
+}
+
+.unit_name_piscivians
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.5em;
+  color: blue;
+}
+
+#unit_left img
+{
+  width: 100%;
+  height: 380px;
+}
+
+#unit_right
+{
+  height: 411px;
+}
+
+#unit_stats_humans
+{
+  float: left;
+  margin-left: 40px;
+}
+
+#unit_stats_piscivians
+{
+  float: left;
+  margin-left: 40px;
+}
+
+#unit_stats_humans .stats_title
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: red;
+}
+
+#unit_stats_piscivians .stats_title
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: blue;
+}
+
+.left
+{
+  float: left;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.right
+{
+  float: left;
+  text-align: right;
+  margin-right: 20px;
+}
+
+#unit_video
+{
+  float: left;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+#unit_buttons
+{
+  float: left;
+  margin-left: 5px;
+  margin-top: 54.5px;
+}
+
+#unit_buttons img
+{
+  margin-bottom: 5px;
+  width: 64px;
+  border-width: 3px;
+  border-color: black;
+}
+
+#unit_abilities
+{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#unit_abilities #title_humans
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.5em;
+  color: red;
+}
+
+#unit_abilities #title_piscivians
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.5em;
+  color: blue;
+}
+
+.ability
+{
+  margin-bottom: 30px;
+}
+
+.ability img
+{
+  float: left;
+}
+
+.ability_desc
+{
+  margin-left: 80px;
+}
+
+.ability_desc .name_humans
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.2em;
+  color: red;
+}
+
+.ability_desc .name_piscivians
+{
+  font-family: Times New Roman, serif;
+  font-size: 1.2em;
+  color: blue;
+}
+
+

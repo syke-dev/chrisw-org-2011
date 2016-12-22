@@ -1,0 +1,29 @@
+#column_left
+{
+  float: left;
+  width: 360px;
+  margin: 20px;
+}
+
+#column_right
+{
+  float: right;
+  width: 360px;
+  margin: 20px;
+}
+
+#main_video
+{
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+}
+
+#gamehome_content #column_left h1
+{
+  font-family: Times New Roman, serif;
+  text-align: center;
+  margin: 0px;
+  font-weight: normal;
+}
+
