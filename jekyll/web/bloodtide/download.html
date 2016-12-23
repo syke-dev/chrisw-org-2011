@@ -4,7 +4,7 @@
 
   <head>
   
-    <?php require(getenv("CHRISW_HEADER")) ?>
+    {% include chrisw/header.html %}
 
     <link rel = "stylesheet" type = "text/css" href = "bloodtide.css" />
 
@@ -18,8 +18,8 @@
     
       <img id = "btlogo" src = "../media/Logo.gif" />
       
-      <?php require(getenv("CHRISW_TITLE")) ?>
-      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      {% include chrisw/title.html %}
+      {% include chrisw/navbar.html %}
       
       <div id = "gamedownload_content">
       
@@ -38,11 +38,11 @@
 
       </div>
       
-      <?php require(getenv("PROJECT_NAV")) ?>
+      {% include bloodtide/project_navigation.html %}
     
     </div>
     
-    <?php require(getenv("CHRISW_FOOTER")) ?>
+    {% include chrisw/footer.html %}
     
   </body>
 

@@ -4,7 +4,7 @@
 
   <head>
   
-    <?php require(getenv("CHRISW_HEADER")) ?>
+    {% include chrisw/header.html %}
 
     <title> Kernel Message System </title>
   
@@ -14,8 +14,8 @@
 
     <div id = "global_mainarea">
     
-      <?php require(getenv("CHRISW_TITLE")) ?>
-      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      {% include chrisw/title.html %}
+      {% include chrisw/navbar.html %}
       
       <div id = "subpage_content">
       
@@ -97,7 +97,7 @@
       
     </div>
     
-    <?php require(getenv("CHRISW_FOOTER")) ?>
+    {% include chrisw/footer.html %}
     
   </body>
 

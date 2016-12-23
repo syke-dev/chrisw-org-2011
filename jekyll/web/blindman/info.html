@@ -4,7 +4,7 @@
 
   <head>
   
-    <?php require(getenv("CHRISW_HEADER")) ?>
+    {% include chrisw/header.html %}
     <?php require(getenv("HIGHSLIDE")) ?>
 
     <link rel = "stylesheet" type = "text/css" href = "blindman.css" />
@@ -21,8 +21,8 @@
 
     <div id = "global_mainarea">
       
-      <?php require(getenv("CHRISW_TITLE")) ?>
-      <?php require(getenv("CHRISW_NAVBAR")) ?>
+      {% include chrisw/title.html %}
+      {% include chrisw/navbar.html %}
       
       <div id = "gameinfo_content">
       
@@ -94,11 +94,11 @@
 
       </div>
       
-      <?php require(getenv("PROJECT_NAV")) ?>
+      {% include blindman/project_navigation.html %}
     
     </div>
     
-    <?php require(getenv("CHRISW_FOOTER")) ?>
+    {% include chrisw/footer.html %}
     
   </body>
 
