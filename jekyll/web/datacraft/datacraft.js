@@ -1,7 +1,7 @@
 var request = false;
 var xmlDoc = false;
 var xmlString = "";
-var cgiURL = "query.php";
+var cgiURL = "query/";
 
 function desc(s) 
 {
@@ -28,7 +28,7 @@ function run_sql_query(query, callback)
 
   escape(query);
 
-  cgiScript = cgiURL + "?query=" + query;
+  cgiScript = cgiURL + query + ".xml";
 
   request.open("GET", cgiScript, true);
   request.onreadystatechange = callback;
