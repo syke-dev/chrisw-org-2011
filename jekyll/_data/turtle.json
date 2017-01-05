@@ -1,0 +1,48 @@
+{
+  "class": "_piscivians",
+  "stats": {
+    "name": "Turtle",
+    "icon": "http://bloodtide.chrisw.org/units/turtle/Turtle.png",
+    "hp": "350",
+    "str": "15",
+    "arm": "40",
+    "move": "6.5",
+    "fac": "Piscivians"
+  },
+  "unitstats": {
+    "hp": "115",
+    "str": "15",
+    "arm": "30",
+    "move": "4.0",
+    "rng": "18.0"
+  },
+  "abilities": [
+    {
+      "name": "Wave Cannon",
+      "icon": "http://bloodtide.chrisw.org/units/turtle/WaveCannonIcon.jpeg",
+      "desc": "Fires a wave with a long cool-down.",
+      "url": "http://bloodtide.chrisw.org/units/turtle/WaveCannon.mp4",
+      "img": "http://bloodtide.chrisw.org/units/turtle/WaveCannonPreview.png",
+      "cool": "3 seconds",
+      "rng": "30 meters"
+    },
+    {
+      "name": "Shell Barrier",
+      "icon": "http://bloodtide.chrisw.org/units/turtle/ShellBarrierIcon.jpeg",
+      "desc": "Nullifies all damage done to the turtle for a short period of time.",
+      "url": "http://bloodtide.chrisw.org/units/turtle/ShellBarrier.mp4",
+      "img": "http://bloodtide.chrisw.org/units/turtle/ShellBarrierPreview.png",
+      "cool": "10 seconds",
+      "rng": "N/A"
+    },
+    {
+      "name": "Bite",
+      "icon": "http://bloodtide.chrisw.org/units/turtle/BiteIcon.jpeg",
+      "desc": "A fast, strong bite attack that pierces through enemy defense.",
+      "url": "http://bloodtide.chrisw.org/units/turtle/Bite.mp4",
+      "img": "http://bloodtide.chrisw.org/units/turtle/BitePreview.png",
+      "cool": "10 seconds",
+      "rng": "Melee"
+    }
+  ]
+}

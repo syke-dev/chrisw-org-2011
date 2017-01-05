@@ -1,0 +1,48 @@
+{
+  "class": "_humans",
+  "stats": {
+    "name": "Submarine",
+    "icon": "http://bloodtide.chrisw.org/units/submarine/Submarine.png",
+    "hp": "300",
+    "str": "30",
+    "arm": "35",
+    "move": "7.25",
+    "fac": "Humans"
+  },
+  "unitstats": {
+    "hp": "75",
+    "str": "15",
+    "arm": "25",
+    "move": "4.75",
+    "rng": "15.0"
+  },
+  "abilities": [
+    {
+      "name": "Torpedo",
+      "icon": "http://bloodtide.chrisw.org/units/submarine/TorpedoIcon.png",
+      "desc": "Fires a torpedo that deals 50 damage upon impact.",
+      "url": "http://bloodtide.chrisw.org/units/submarine/Torpedo.mp4",
+      "img": "http://bloodtide.chrisw.org/units/submarine/TorpedoPreview.png",
+      "cool": "5 seconds",
+      "rng": "20 meters"
+    },
+    {
+      "name": "Stealth",
+      "icon": "http://bloodtide.chrisw.org/units/submarine/StealthIcon.png",
+      "desc": "Turns the submarine invisible to all enemy units for 10 seconds.",
+      "url": "http://bloodtide.chrisw.org/units/submarine/Stealth.mp4",
+      "img": "http://bloodtide.chrisw.org/units/submarine/StealthPreview.png",
+      "cool": "20 seconds",
+      "rng": "N/A"
+    },
+    {
+      "name": "Barrage",
+      "icon": "http://bloodtide.chrisw.org/units/submarine/BarrageIcon.png",
+      "desc": "Fires 10 torpedos in a 50 degree arc in front of the submarine that each deal 10 damage upon impact.",
+      "url": "http://bloodtide.chrisw.org/units/submarine/Barrage.mp4",
+      "img": "http://bloodtide.chrisw.org/units/submarine/BarragePreview.png",
+      "cool": "10 seconds",
+      "rng": "20 meters"
+    }
+  ]
+}

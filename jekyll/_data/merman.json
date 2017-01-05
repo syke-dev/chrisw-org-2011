@@ -1,0 +1,48 @@
+{
+  "class": "_piscivians",
+  "stats": {
+    "name": "Merman",
+    "icon": "http://bloodtide.chrisw.org/units/merman/Merman.png",
+    "hp": "320",
+    "str": "25",
+    "arm": "30",
+    "move": "6.75",
+    "fac": "Piscivians"
+  },
+  "unitstats": {
+    "hp": "100",
+    "str": "25",
+    "arm": "35",
+    "move": "4.25",
+    "rng": "2.0 (melee)"
+  },
+  "abilities": [
+    {
+      "name": "Trident",
+      "icon": "http://bloodtide.chrisw.org/units/merman/TridentIcon.jpeg",
+      "desc": "Basic melee attack with trident.",
+      "url": "http://bloodtide.chrisw.org/units/merman/Trident.mp4",
+      "img": "http://bloodtide.chrisw.org/units/merman/TridentPreview.png",
+      "cool": "4 seconds",
+      "rng": "Melee"
+    },
+    {
+      "name": "Laser Trident",
+      "icon": "http://bloodtide.chrisw.org/units/merman/LaserTridentIcon.jpeg",
+      "desc": "A magic beam of light fires from trident and stuns enemies.",
+      "url": "http://bloodtide.chrisw.org/units/merman/LaserTrident.mp4",
+      "img": "http://bloodtide.chrisw.org/units/merman/LaserTridentPreview.png",
+      "cool": "2 seconds",
+      "rng": "30 meters"
+    },
+    {
+      "name": "Serenade",
+      "icon": "http://bloodtide.chrisw.org/units/merman/SerenadeIcon.jpeg",
+      "desc": "An AOE tribal song that gives large healing bonuses.",
+      "url": "http://bloodtide.chrisw.org/units/merman/Serenade.mp4",
+      "img": "http://bloodtide.chrisw.org/units/merman/SerenadePreview.png",
+      "cool": "10 seconds",
+      "rng": "10 meters"
+    }
+  ]
+}

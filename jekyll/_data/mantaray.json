@@ -1,0 +1,48 @@
+{
+  "class": "_piscivians",
+  "stats": {
+    "name": "Manta Ray",
+    "icon": "http://bloodtide.chrisw.org/units/mantaray/MantaRay.png",
+    "hp": "300",
+    "str": "30",
+    "arm": "30",
+    "move": "7.75",
+    "fac": "Piscivians"
+  },
+  "unitstats": {
+    "hp": "75",
+    "str": "15",
+    "arm": "15",
+    "move": "5.25",
+    "rng": "3.0 (melee)"
+  },
+  "abilities": [
+    {
+      "name": "Tail Whip",
+      "icon": "http://bloodtide.chrisw.org/units/mantaray/TailWhipIcon.png",
+      "desc": "The manta will spin around whipping a unit with its tail.",
+      "url": "http://bloodtide.chrisw.org/units/mantaray/TailWhip.mp4",
+      "img": "http://bloodtide.chrisw.org/units/mantaray/TailWhipPreview.png",
+      "cool": "1 second",
+      "rng": "Melee"
+    },
+    {
+      "name": "Riptide",
+      "icon": "http://bloodtide.chrisw.org/units/mantaray/RiptideIcon.png",
+      "desc": "Hides from enemy site for a limited time and increases speed of nearby allies.",
+      "url": "http://bloodtide.chrisw.org/units/mantaray/Riptide.mp4",
+      "img": "http://bloodtide.chrisw.org/units/mantaray/RiptidePreview.png",
+      "cool": "10 seconds",
+      "rng": "10 meters"
+    },
+    {
+      "name": "Whirlpool",
+      "icon": "http://bloodtide.chrisw.org/units/mantaray/WhirlpoolIcon.jpeg",
+      "desc": "Creates an underwater tornado that damages surrounding enemies.",
+      "url": "http://bloodtide.chrisw.org/units/mantaray/Whirlpool.mp4",
+      "img": "http://bloodtide.chrisw.org/units/mantaray/WhirlpoolPreview.png",
+      "cool": "5 seconds",
+      "rng": "Melee"
+    }
+  ]
+}

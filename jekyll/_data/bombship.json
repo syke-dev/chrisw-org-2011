@@ -1,0 +1,48 @@
+{
+  "class": "_humans",
+  "stats": {
+    "name": "Bombship",
+    "icon": "http://bloodtide.chrisw.org/units/bombship/Bombship.png",
+    "hp": "280",
+    "str": "35",
+    "arm": "30",
+    "move": "6",
+    "fac": "Humans"
+  },
+  "unitstats": {
+    "hp": "125",
+    "str": "25",
+    "arm": "15",
+    "move": "3.5",
+    "rng": "10.0"
+  },
+  "abilities": [
+    {
+      "name": "Cannon",
+      "icon": "http://bloodtide.chrisw.org/units/bombship/CannonIcon.png",
+      "desc": "Fires an explosive cannon ball that deals 60 damage upon impact.",
+      "url": "http://bloodtide.chrisw.org/units/bombship/Cannon.mp4",
+      "img": "http://bloodtide.chrisw.org/units/bombship/CannonPreview.png",
+      "cool": "4 seconds",
+      "rng": "20 meters"
+    },
+    {
+      "name": "Depth Charge",
+      "icon": "http://bloodtide.chrisw.org/units/bombship/DepthChargeIcon.png",
+      "desc": "Plants a bomb that will explode and stun enemies after 2 seconds. The explosion deals 50 damage to all units within 10 meters, leaving them stunned for 2 seconds.",
+      "url": "http://bloodtide.chrisw.org/units/bombship/DepthCharge.mp4",
+      "img": "http://bloodtide.chrisw.org/units/bombship/DepthChargePreview.png",
+      "cool": "15 seconds",
+      "rng": "10 meters"
+    },
+    {
+      "name": "Recovery Units",
+      "icon": "http://bloodtide.chrisw.org/units/bombship/RecoveryUnitsIcon.png",
+      "desc": "An AOE heal that heals all allies within 10 meters of the bombship for 40 hit points. Affected units also receive a strength buff of 10 points that lasts for 7 seconds.",
+      "url": "http://bloodtide.chrisw.org/units/bombship/RecoveryUnits.mp4",
+      "img": "http://bloodtide.chrisw.org/units/bombship/RecoveryUnitsPreview.png",
+      "cool": "12 seconds",
+      "rng": "10 meters"
+    }
+  ]
+}
