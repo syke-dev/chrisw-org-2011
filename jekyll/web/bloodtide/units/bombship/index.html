@@ -7,7 +7,6 @@
   <head>
   
     {% include chrisw/header.html %}
-    <?php require(getenv("UNIT_DISPLAY")) ?>
     
     <link rel = "stylesheet" type = "text/css" href = "http://bloodtide.chrisw.org/bloodtide.css" />
     <link rel = "stylesheet" type = "text/css" href = "http://bloodtide.chrisw.org/units/units.css" />
@@ -25,11 +24,7 @@
       {% include chrisw/title.html %}
       {% include chrisw/navbar.html %}
       
-      <?php 
-      
-        display_bombship();
-
-      ?>
+      {% include bloodtide/unitdisplay.html unit=site.data.bombship %}
         
       {% include bloodtide/project_navigation.html %}
     
