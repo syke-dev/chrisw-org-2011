@@ -1,5 +1,5 @@
 <!-- Includes (place in actual page) -->
-<script type='text/javascript' src='http://www.chrisw.org/web/jwplayer/jwplayer.js'></script>
+<script type='text/javascript' src='http://www.chrisw.org/web/shared/jwplayer/jwplayer.js'></script>
 <script type='text/javascript' src='http://www.chrisw.org/web/bloodtide/units/units.js'></script>
 <script type='text/javascript' src='http://www.chrisw.org/web/shared/jquery.js'></script>
 
@@ -80,9 +80,9 @@
 		
 			<script type='text/javascript'>
 			  jwplayer('jwplayer').setup({
-				'flashplayer': 'http://www.chrisw.org/web/jwplayer/player.swf',
-				'file': '" . {{ ability.url }} ."',
-				'image': '" . {{ ability.img }} ."',
+				'flashplayer': 'http://www.chrisw.org/web/shared/jwplayer/player.swf',
+				'file': '{{ ability.url }}',
+				'image': '{{ ability.img }}',
 				'controlbar': 'none',
 				'dock': 'false',
 				'width': '480',
