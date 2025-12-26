@@ -15,7 +15,7 @@ function chart_enemy_kills(chartXml)
   
   chartXml = request.responseText;
   
-  myChart = new FusionCharts( "http://chrisw.org/web/fusioncharts/Charts/Column3D.swf", chartID, chartWidth, chartHeight, "0", "01");
+  myChart = new FusionCharts( "fusioncharts/Charts/Column3D.swf", chartID, chartWidth, chartHeight, "0", "01");
   myChart.setXMLData(chartXml);
   myChart.render(chartContainer);
 }
@@ -32,7 +32,7 @@ function chart_player_scores(chartXml)
   
   chartXml = request.responseText;
   
-  myChart = new FusionCharts( "http://chrisw.org/web/fusioncharts/Charts/MSLine.swf", chartID, chartWidth, chartHeight, "0", "01");
+  myChart = new FusionCharts( "fusioncharts/Charts/MSLine.swf", chartID, chartWidth, chartHeight, "0", "01");
   myChart.setXMLData(chartXml);
   myChart.render(chartContainer);
 }
@@ -49,7 +49,7 @@ function chart_enemies_on_board(chartXml)
   
   chartXml = request.responseText;
   
-  myChart = new FusionCharts( "http://chrisw.org/web/fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
+  myChart = new FusionCharts( "fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
   myChart.setXMLData(chartXml);
   myChart.render(chartContainer);
 }
@@ -66,7 +66,7 @@ function chart_player_wep_freq(chartXml)
   
   chartXml = request.responseText;
   
-  myChart = new FusionCharts( "http://chrisw.org/web/fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
+  myChart = new FusionCharts( "fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
   myChart.setXMLData(chartXml);
   myChart.render(chartContainer);
 }
@@ -83,7 +83,7 @@ function chart_enemy_wep_freq(chartXml)
   
   chartXml = request.responseText;
   
-  myChart = new FusionCharts( "http://chrisw.org/web/fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
+  myChart = new FusionCharts( "fusioncharts/Charts/MSColumn2D.swf", chartID, chartWidth, chartHeight, "0", "01");
   myChart.setXMLData(chartXml);
   myChart.render(chartContainer);
 }
