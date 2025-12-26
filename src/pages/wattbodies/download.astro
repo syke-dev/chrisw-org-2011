@@ -1,49 +1,28 @@
 ---
+import WattBodiesLayout from '@layouts/WattBodiesLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<WattBodiesLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
+	<Fragment slot="body">
 
-    <link rel = "stylesheet" type = "text/css" href = "wattbodies.css" />
+		<div id = "gamedownload_content">
+		
+			<h2> Installation </h2>
+			
+			Watt Bodies requires the August 2009 version (or later) DirectX SDK to be installed.<br>
+			The SDK can be downloaded here: <a href = "http://msdn.microsoft.com/en-us/directx/aa937788.aspx">http://msdn.microsoft.com/en-us/directx/aa937788.aspx</a><br>
+			
+			<br>
+			
+			Watt Bodies is playable on Windows XP / Vista / 7.
+			
+			<br><br>
+			
+			<a href = "//downloads.chrisw.org/WattBodies.zip">WattBodies.zip</a> (137 MB / 292 MB unzipped)
 
-    <title> Watt Bodies </title>
-  
-  </head>
-  
-  <body>
+		</div>
 
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "gamedownload_content">
-      
-        <h2> Installation </h2>
-        
-        Watt Bodies requires the August 2009 version (or later) DirectX SDK to be installed.<br>
-        The SDK can be downloaded here: <a href = "http://msdn.microsoft.com/en-us/directx/aa937788.aspx">http://msdn.microsoft.com/en-us/directx/aa937788.aspx</a><br>
-        
-        <br>
-        
-        Watt Bodies is playable on Windows XP / Vista / 7.
-        
-        <br><br>
-        
-        <a href = "//downloads.chrisw.org/WattBodies.zip">WattBodies.zip</a> (137 MB / 292 MB unzipped)
+	</Fragment>
 
-      </div>
-      
-      {% include wattbodies/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
-
-</html>
+</WattBodiesLayout>

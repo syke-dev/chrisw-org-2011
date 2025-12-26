@@ -1,68 +1,57 @@
 ---
+import WattBodiesLayout from '@layouts/WattBodiesLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<WattBodiesLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
-    
-    <link rel = "stylesheet" type = "text/css" href = "wattbodies.css" />
+	<Fragment slot="body">
 
-    <title> Watt Bodies </title>
-  
-  </head>
-  
-  <body>
+		<div id = "subpage_content">
 
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "subpage_content">
+			<h2> Media </h2>
+			
+			<div style = "width: 650px;">
+			
+			<img src="SpaceJunkyard.png" height="410" width="610"/>
+			
+			<br><br>
+			
+			<img src="Conveyor.png" height="200" width="200"/>
+			<img src="Hover.png" height="200" width="200"/>
+			<img src="Spikes.png" height="200" width="200"/>
+			
+			<br><br>
+			
+			<img src="Dousoid_Hoveroid.png" height="410" width="610"/>
+			
+			<br><br>
+			
+			<img src="Question.png" height="410" width="610"/>
+			
+			<br><br>
+			
+			<img src="Puzzle.png" height="410" width="610"/>
+			
+			<br><br>
+			
+			<img src="Time.png" height="410" width="610"/>
+			
+			<br><br>
+			
+			</div>
+	
+		</div>
 
-        <h2> Media </h2>
-        
-        <div style = "width: 650px;">
-        
-          <img src="SpaceJunkyard.png" height="410" width="610"/>
-          
-          <br><br>
-         
-          <img src="Conveyor.png" height="200" width="200"/>
-          <img src="Hover.png" height="200" width="200"/>
-          <img src="Spikes.png" height="200" width="200"/>
-          
-          <br><br>
-          
-          <img src="Dousoid_Hoveroid.png" height="410" width="610"/>
-          
-          <br><br>
-          
-          <img src="Question.png" height="410" width="610"/>
-          
-          <br><br>
-          
-          <img src="Puzzle.png" height="410" width="610"/>
-          
-          <br><br>
-          
-          <img src="Time.png" height="410" width="610"/>
-          
-          <br><br>
-        
-        </div>
-  
-      </div>
-      
-      {% include wattbodies/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
+	</Fragment>
 
-</html>
+</WattBodiesLayout>
+
+<style>
+
+	#subpage_content img
+	{
+		outline: black solid 1px;
+		margin-right: 10px;
+	}
+
+</style>
