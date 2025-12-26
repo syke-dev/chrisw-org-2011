@@ -2,7 +2,7 @@
   "class": "_piscivians",
   "stats": {
     "name": "Merman",
-    "icon": "http://bloodtide.chrisw.org/units/merman/Merman.png",
+    "icon": "bloodtide/units/merman/Merman.png",
     "hp": "320",
     "str": "25",
     "arm": "30",
@@ -19,7 +19,7 @@
   "abilities": [
     {
       "name": "Trident",
-      "icon": "http://bloodtide.chrisw.org/units/merman/TridentIcon.jpeg",
+      "icon": "bloodtide/units/merman/TridentIcon.jpeg",
       "desc": "Basic melee attack with trident.",
       "url": "http://videos.chrisw.org/bloodtide/units/merman/Trident.mp4",
       "img": "http://videos.chrisw.org/bloodtide/units/merman/TridentPreview.png",
@@ -28,7 +28,7 @@
     },
     {
       "name": "Laser Trident",
-      "icon": "http://bloodtide.chrisw.org/units/merman/LaserTridentIcon.jpeg",
+      "icon": "bloodtide/units/merman/LaserTridentIcon.jpeg",
       "desc": "A magic beam of light fires from trident and stuns enemies.",
       "url": "http://videos.chrisw.org/bloodtide/units/merman/LaserTrident.mp4",
       "img": "http://videos.chrisw.org/bloodtide/units/merman/LaserTridentPreview.png",
@@ -37,7 +37,7 @@
     },
     {
       "name": "Serenade",
-      "icon": "http://bloodtide.chrisw.org/units/merman/SerenadeIcon.jpeg",
+      "icon": "bloodtide/units/merman/SerenadeIcon.jpeg",
       "desc": "An AOE tribal song that gives large healing bonuses.",
       "url": "http://videos.chrisw.org/bloodtide/units/merman/Serenade.mp4",
       "img": "http://videos.chrisw.org/bloodtide/units/merman/SerenadePreview.png",
