@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title='Watt Bodies' header_image='projects/wattbodies/media/Logo.png'>
+
+	<Fragment slot="base_header">
+
+		<slot name="header" />
+
+	</Fragment>
+
+	<Fragment slot="base_body">
+
+		<slot name="body" />
+
+		<div id = "project_navigation">
+		
+			<a href = "/projects/wattbodies">Home</a>
+			<a href = "/projects/wattbodies/info">Info</a>
+			<a href = "/projects/wattbodies/media">Media</a>
+			<a href = "/projects/wattbodies/download">Download</a>
+		
+		</div>
+
+	</Fragment>
+
+</BaseLayout>

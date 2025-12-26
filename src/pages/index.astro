@@ -1,78 +1,61 @@
 ---
+import SharedLayout from '@layouts/SharedLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<SharedLayout title='chrisw'>
 
-  <head>
+	<Fragment slot="body">
 
-    {% include chrisw/header.html %}
+		<div id = "home">
+			<img id = "me" src = "blindman/media/ChrisPlaying.jpg" />
+			Welcome to the portfolio of <b>Chris Williams</b>
+			<br><br>
+			I am a Worcester Polytechnic Institute graduate, with a B.S. in Interactive Media and Game Development and a minor in Computer Science.
+			<br><br>
+			Questions, comments? Feel free to contact me at
+			<br><br>
+			<span id = "contact">
+				syke.dev@gmail.com<br>
+			</span>
+		</div>
+		
+		<div class = "break"></div> 
+		
+		<br><br><br><br>
+		
+		<span style = "margin-left: 15px">While you are here, make sure you visit:</span>
+		
+		<br><br>
+		
+		<div>
+		
+		<div class = "image_link">
+			<img src = "bloodtide/media/CommanderVidoes.jpg" /><br>
+			<a href = "bloodtide/units">Blood Tide Commander Vidoes</a>
+		</div>
+		
+		<div class = "image_link">
+			<img src = "willow/media/Before&After.jpg" /><br>
+			<a href = "willow/media.html">Willow Color Shader</a>
+		</div>
+		
+		<div class = "image_link">
+			<img src = "datacraft/media/PlayerScores.jpg" /><br>
+			<a href = "datacraft/stats.html">DataCraft Statistics</a>
+		</div>
+		
+		</div>
+		
+		<div class = "break"></div><br>
 
-    <title> chrisw </title>
-    
-    <style type = "text/css">
-      #home {margin: 15px; width: 700px;}
-      #me {width: 250px; height: 200px; float: left; margin-right: 20px;}
-      #contact {margin-left: 15px;}
-      .image_link {margin-left: 15px; margin-right: 15px; float: left; text-align: center;}
-      .image_link img {width: 212px; height: 132px; margin-bottom: 10px;}
-    </style>
-    
-  </head>
-  
-  <body>
+	</Fragment>
 
-    <div id = "global_mainarea">
-     
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "home">
-        <img id = "me" src = "blindman/media/ChrisPlaying.jpg" />
-        Welcome to the portfolio of <b>Chris Williams</b>
-        <br><br>
-        I am a Worcester Polytechnic Institute graduate, with a B.S. in Interactive Media and Game Development and a minor in Computer Science.
-        <br><br>
-        Questions, comments? Feel free to contact me at
-        <br><br>
-        <span id = "contact">
-          syke.dev@gmail.com<br>
-        </span>
-      </div>
-      
-      <div class = "break"></div> 
-      
-      <br><br><br><br>
-     
-      <span style = "margin-left: 15px">While you are here, make sure you visit:</span>
-      
-      <br><br>
-      
-      <div>
-      
-        <div class = "image_link">
-          <img src = "bloodtide/media/CommanderVidoes.jpg" /><br>
-          <a href = "bloodtide/units">Blood Tide Commander Vidoes</a>
-        </div>
-        
-        <div class = "image_link">
-          <img src = "willow/media/Before&After.jpg" /><br>
-          <a href = "willow/media.html">Willow Color Shader</a>
-        </div>
-        
-        <div class = "image_link">
-          <img src = "datacraft/media/PlayerScores.jpg" /><br>
-          <a href = "datacraft/stats.html">DataCraft Statistics</a>
-        </div>
-        
-      </div>
-      
-      <div class = "break"></div><br>
-      
-    </div>
+</SharedLayout>
 
-    {% include chrisw/footer.html %}
-
-  </body>
-
-</html>
+<style type = "text/css">
+	#home {margin: 15px; width: 700px;}
+	#me {width: 250px; height: 200px; float: left; margin-right: 20px;}
+	#contact {margin-left: 15px;}
+	.image_link {margin-left: 15px; margin-right: 15px; float: left; text-align: center;}
+	.image_link img {width: 212px; height: 132px; margin-bottom: 10px;}
+</style>

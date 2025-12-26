@@ -1,120 +1,172 @@
 ---
+import SharedLayout from '@layouts/SharedLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<SharedLayout title='chrisw'>
 
-  <head>
-  
-    {% include chrisw/header.html %}
+	<Fragment slot="body">
 
-    <link rel = "stylesheet" type = "text/css" href = "projects.css" />
-    
-    <title> Projects </title>
-  
-  </head>
-  
-  <body>
+		<div class = "project">
+			<img src = "bloodtide/media/BloodTideProject.jpg" />
+			<div class = "title"> Blood Tide </div>
+			<div class = "desc"> 
+				Blood Tide is a multiplayer, online, action, real-time strategy game for the PC. 
+				The game allows players to experience both the strategic management of an army in command mode and the fast-paced, 
+				action-packed combat on the battlefield alongside other troops in field mode.
+			</div>
+			<a href = "bloodtide" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "willow/media/WillowProject.png" />
+			<div class = "title"> Willow </div>
+			<div class = "desc"> 
+				Willow is an interactive puzzle game with a strong emphasis on story and emotional impact.
+				It features a selective color shader that allows for only certain colors to be visible
+				in the game world at any given time.<br><br>
+			</div>
+			<a href = "willow" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "wattbodies/media/SpaceJunkyard.png" />
+			<div class = "title"> Watt Bodies </div>
+			<div class = "desc"> 
+				Watt Bodies is a multiplayer cooperative puzzle game geared towards children.
+				Each player can choose between three different characters that have unique abilities
+				required to solve puzzles or assist other players.
+			</div>
+			<br>
+			<a href = "wattbodies" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "blindman/media/ChrisPlaying.jpg" />
+			<div class = "title"> Blind Man's Last Stand </div>
+			<div class = "desc"> 
+				Blind Man's Last Stand is a zombie survival game that takes place entirely
+				on the player's hat. In this game, however, the player cannot see the zombies and 
+				must rely on other senses to survive against the never-ending horde of zombies.
+			</div>
+			<br>
+			<a href = "blindman" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "datacraft/media/EnemyWeaponUse.jpg" />
+			<div class = "title"> DataCraft </div>
+			<div class = "desc"> 
+				DataCraft is a database project aimed at using statistics from play-throughs to balance a shoot 'em up game. 
+				It is meant to speed up the process of game-balancing, by finding problem areas that game developers can focus their efforts towards.
+			</div>
+			<br>
+			<a href = "datacraft" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "projects/glinda/media/ComputeFarm.jpg" />
+			<div class = "title"> Glinda </div>
+			<div class = "desc">
+				Glinda is a project I implemented for a Distributed Computer Systems course.
+				Glinda is a name server that can be used for finding named resources and for sychronization between distributed processes.
+				Using my Glinda server, I built a compute farm that performs a distributed summation.
+			</div>
+			<a href = "projects/glinda" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "projects/mailbox/media/LinuxLogo.jpg" />
+			<div class = "title"> Kernel Message System </div>
+			<div class = "desc"> 
+				For an Operating Systems course, I modified the Linux Kernel to include an inter-process messaging system. 
+				The task_struct in the Linux Kernel was modified to include a mailbox structure that holds messages for processes.
+				The mailboxes are synchronized using spinlocks.
+			</div>
+			<a href = "projects/mailbox" class = "link">More</a>
+		</div>
+		
+		<div class = "project">
+			<img src = "projects/unitedwefight/media/UWF.gif" />
+			<div class = "title"> United We Fight </div>
+			<div class = "desc"> 
+				United We Fight is a multiplayer co-operative game. It is a Half-life 2 modification. 
+				The game itself is more of an updated engine for mappers to create co-operative maps. 
+				The game features improved AI for multiplayer, new weapons, class support, faction support, and more.
+			</div>
+			<a href = "" class = "link" onclick="return false"><strike>More</strike></a>
+		</div>
 
-    <div id = "global_mainarea">
-    
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div class = "project">
-        <img src = "bloodtide/media/BloodTideProject.jpg" />
-        <div class = "title"> Blood Tide </div>
-        <div class = "desc"> 
-          Blood Tide is a multiplayer, online, action, real-time strategy game for the PC. 
-          The game allows players to experience both the strategic management of an army in command mode and the fast-paced, 
-          action-packed combat on the battlefield alongside other troops in field mode.
-        </div>
-        <a href = "bloodtide" class = "link">More</a>
-      </div>
-      
-      <div class = "project">
-        <img src = "willow/media/WillowProject.png" />
-        <div class = "title"> Willow </div>
-        <div class = "desc"> 
-          Willow is an interactive puzzle game with a strong emphasis on story and emotional impact.
-          It features a selective color shader that allows for only certain colors to be visible
-          in the game world at any given time.<br><br>
-        </div>
-        <a href = "willow" class = "link">More</a>
-      </div>   
-      
-      <div class = "project">
-        <img src = "wattbodies/media/SpaceJunkyard.png" />
-        <div class = "title"> Watt Bodies </div>
-        <div class = "desc"> 
-          Watt Bodies is a multiplayer cooperative puzzle game geared towards children.
-          Each player can choose between three different characters that have unique abilities
-          required to solve puzzles or assist other players.
-        </div>
-        <br>
-        <a href = "wattbodies" class = "link">More</a>
-      </div>
-      
-      <div class = "project">
-        <img src = "blindman/media/ChrisPlaying.jpg" />
-        <div class = "title"> Blind Man's Last Stand </div>
-        <div class = "desc"> 
-          Blind Man's Last Stand is a zombie survival game that takes place entirely
-          on the player's hat. In this game, however, the player cannot see the zombies and 
-          must rely on other senses to survive against the never-ending horde of zombies.
-        </div>
-        <br>
-        <a href = "blindman" class = "link">More</a>
-      </div>   
-      
-      <div class = "project">
-        <img src = "datacraft/media/EnemyWeaponUse.jpg" />
-        <div class = "title"> DataCraft </div>
-        <div class = "desc"> 
-         DataCraft is a database project aimed at using statistics from play-throughs to balance a shoot 'em up game. 
-         It is meant to speed up the process of game-balancing, by finding problem areas that game developers can focus their efforts towards.
-        </div>
-        <br>
-        <a href = "datacraft" class = "link">More</a>
-      </div>   
-      
-      <div class = "project">
-        <img src = "projects/glinda/media/ComputeFarm.jpg" />
-        <div class = "title"> Glinda </div>
-        <div class = "desc">
-          Glinda is a project I implemented for a Distributed Computer Systems course.
-          Glinda is a name server that can be used for finding named resources and for sychronization between distributed processes.
-          Using my Glinda server, I built a compute farm that performs a distributed summation.
-        </div>
-        <a href = "projects/glinda" class = "link">More</a>
-      </div> 
-      
-      <div class = "project">
-        <img src = "projects/mailbox/media/LinuxLogo.jpg" />
-        <div class = "title"> Kernel Message System </div>
-        <div class = "desc"> 
-          For an Operating Systems course, I modified the Linux Kernel to include an inter-process messaging system. 
-          The task_struct in the Linux Kernel was modified to include a mailbox structure that holds messages for processes.
-          The mailboxes are synchronized using spinlocks.
-        </div>
-        <a href = "projects/mailbox" class = "link">More</a>
-      </div> 
-      
-      <div class = "project">
-        <img src = "projects/unitedwefight/media/UWF.gif" />
-        <div class = "title"> United We Fight </div>
-        <div class = "desc"> 
-          United We Fight is a multiplayer co-operative game. It is a Half-life 2 modification. 
-          The game itself is more of an updated engine for mappers to create co-operative maps. 
-          The game features improved AI for multiplayer, new weapons, class support, faction support, and more.
-        </div>
-        <a href = "" class = "link" onclick="return false"><strike>More</strike></a>
-      </div> 
-      
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
+	</Fragment>
 
-</html>
+</SharedLayout>
+
+<style>
+
+	.project
+	{
+		margin: auto;
+		width: 650px;
+		height: 220px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		position: relative;
+		border-left: 1px solid black;
+		border-bottom: 1px dashed black;
+	}
+
+	.project img
+	{
+		width: 300px;
+		height: 220px;
+		float: left;
+	}
+
+	.title
+	{
+		margin-left: 320px;
+		margin-bottom: 30px;
+		border-bottom: 2px solid red;
+		font-family: Times New Roman, serif;
+		font-size: 1.2em;
+	}
+
+	.desc
+	{
+		margin-left: 320px;
+	}
+
+	.link
+	{
+		position: absolute;
+		top: 195px;
+		left: 590px;
+		border: 1px solid black;
+		padding-right: 7px;
+		padding-left: 7px;
+		text-decoration: none;
+		background-color: #BBA;
+	}
+
+	a:link
+	{
+		color: black;
+	}
+
+	a:visited
+	{
+		color: black;
+	}
+
+	a:hover
+	{
+		color: red;
+	}
+
+	a:active
+	{
+		color: red;
+		font-weight: bold;
+	}
+
+
+</style>

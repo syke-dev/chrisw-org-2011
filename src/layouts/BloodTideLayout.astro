@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title='Blood Tide' header_image='projects/wattbodies/media/Logo.png'>
+
+	<Fragment slot="base_header">
+
+		<slot name="header" />
+
+	</Fragment>
+
+	<Fragment slot="base_body">
+
+		<slot name="body" />
+
+		<div id = "project_navigation">
+		
+			<a href = "http://bloodtide.chrisw.org">Home</a>
+			<a href = "http://bloodtide.chrisw.org/info.html">Info</a>
+			<a href = "http://bloodtide.chrisw.org/units">Units</a>
+			<a href = "http://bloodtide.chrisw.org/team.html">Team</a>
+			<a href = "http://bloodtide.chrisw.org/download.html">Download</a>
+		
+		</div>
+
+	</Fragment>
+
+</BaseLayout>
+
+<style>
+
+	#global_title {
+		background: #33A1DE
+	}
+
+	#btlogo {
+		left: 50%;
+		margin-left: -113px;
+		position: absolute;
+		z-index: 1;
+	}
+
+	#bt_work ul {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	#bt_work .category {
+		font-weight: bold;
+	}
+
+</style>

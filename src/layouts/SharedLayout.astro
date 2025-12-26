@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title='chrisw' header_image='projects/chrisw/media/ChriswLogo.jpg'>
+
+	<Fragment slot="base_header">
+
+		<slot name="header" />
+
+	</Fragment>
+
+	<Fragment slot="base_body">
+
+		<slot name="body" />
+
+	</Fragment>
+
+</BaseLayout>
