@@ -21,8 +21,8 @@
       "name": "Tail Whip",
       "icon": "bloodtide/units/mantaray/TailWhipIcon.png",
       "desc": "The manta will spin around whipping a unit with its tail.",
-      "url": "http://videos.chrisw.org/bloodtide/units/mantaray/TailWhip.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/mantaray/TailWhipPreview.png",
+      "url": "videos/bloodtide/units/mantaray/TailWhip.mp4",
+      "img": "videos/bloodtide/units/mantaray/TailWhipPreview.png",
       "cool": "1 second",
       "rng": "Melee"
     },
@@ -30,8 +30,8 @@
       "name": "Riptide",
       "icon": "bloodtide/units/mantaray/RiptideIcon.png",
       "desc": "Hides from enemy site for a limited time and increases speed of nearby allies.",
-      "url": "http://videos.chrisw.org/bloodtide/units/mantaray/Riptide.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/mantaray/RiptidePreview.png",
+      "url": "videos/bloodtide/units/mantaray/Riptide.mp4",
+      "img": "videos/bloodtide/units/mantaray/RiptidePreview.png",
       "cool": "10 seconds",
       "rng": "10 meters"
     },
@@ -39,8 +39,8 @@
       "name": "Whirlpool",
       "icon": "bloodtide/units/mantaray/WhirlpoolIcon.jpeg",
       "desc": "Creates an underwater tornado that damages surrounding enemies.",
-      "url": "http://videos.chrisw.org/bloodtide/units/mantaray/Whirlpool.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/mantaray/WhirlpoolPreview.png",
+      "url": "videos/bloodtide/units/mantaray/Whirlpool.mp4",
+      "img": "videos/bloodtide/units/mantaray/WhirlpoolPreview.png",
       "cool": "5 seconds",
       "rng": "Melee"
     }

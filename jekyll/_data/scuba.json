@@ -21,8 +21,8 @@
       "name": "Hand Blade",
       "icon": "bloodtide/units/scubatroop/HandBladeIcon.png",
       "desc": "Basic attack with spinning propeller blade that deals 60 damage.",
-      "url": "http://videos.chrisw.org/bloodtide/units/scubatroop/HandBlade.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/scubatroop/HandBladePreview.png",
+      "url": "videos/bloodtide/units/scubatroop/HandBlade.mp4",
+      "img": "videos/bloodtide/units/scubatroop/HandBladePreview.png",
       "cool": "3 seconds",
       "rng": "Melee"
     },
@@ -30,8 +30,8 @@
       "name": "Toxic Dagger",
       "icon": "bloodtide/units/scubatroop/ToxicDaggerIcon.png",
       "desc": "Fires a hand blade that poisons the enemy for 10 seconds, dealing 50 damage total.",
-      "url": "http://videos.chrisw.org/bloodtide/units/scubatroop/ToxicDagger.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/scubatroop/ToxicDaggerPreview.png",
+      "url": "videos/bloodtide/units/scubatroop/ToxicDagger.mp4",
+      "img": "videos/bloodtide/units/scubatroop/ToxicDaggerPreview.png",
       "cool": "5 seconds",
       "rng": "20 meters"
     },
@@ -39,8 +39,8 @@
       "name": "Blade Counter",
       "icon": "bloodtide/units/scubatroop/BladeCounterIcon.png",
       "desc": "Returns 50% of the damage inflicted on the scuba troop back to the attacker.",
-      "url": "http://videos.chrisw.org/bloodtide/units/scubatroop/BladeCounter.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/scubatroop/BladeCounterPreview.png",
+      "url": "videos/bloodtide/units/scubatroop/BladeCounter.mp4",
+      "img": "videos/bloodtide/units/scubatroop/BladeCounterPreview.png",
       "cool": "12 seconds",
       "rng": "N/A"
     }

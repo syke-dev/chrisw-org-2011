@@ -21,8 +21,8 @@
       "name": "Trident",
       "icon": "bloodtide/units/merman/TridentIcon.jpeg",
       "desc": "Basic melee attack with trident.",
-      "url": "http://videos.chrisw.org/bloodtide/units/merman/Trident.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/merman/TridentPreview.png",
+      "url": "videos/bloodtide/units/merman/Trident.mp4",
+      "img": "videos/bloodtide/units/merman/TridentPreview.png",
       "cool": "4 seconds",
       "rng": "Melee"
     },
@@ -30,8 +30,8 @@
       "name": "Laser Trident",
       "icon": "bloodtide/units/merman/LaserTridentIcon.jpeg",
       "desc": "A magic beam of light fires from trident and stuns enemies.",
-      "url": "http://videos.chrisw.org/bloodtide/units/merman/LaserTrident.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/merman/LaserTridentPreview.png",
+      "url": "videos/bloodtide/units/merman/LaserTrident.mp4",
+      "img": "videos/bloodtide/units/merman/LaserTridentPreview.png",
       "cool": "2 seconds",
       "rng": "30 meters"
     },
@@ -39,8 +39,8 @@
       "name": "Serenade",
       "icon": "bloodtide/units/merman/SerenadeIcon.jpeg",
       "desc": "An AOE tribal song that gives large healing bonuses.",
-      "url": "http://videos.chrisw.org/bloodtide/units/merman/Serenade.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/merman/SerenadePreview.png",
+      "url": "videos/bloodtide/units/merman/Serenade.mp4",
+      "img": "videos/bloodtide/units/merman/SerenadePreview.png",
       "cool": "10 seconds",
       "rng": "10 meters"
     }

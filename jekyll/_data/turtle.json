@@ -21,8 +21,8 @@
       "name": "Wave Cannon",
       "icon": "bloodtide/units/turtle/WaveCannonIcon.jpeg",
       "desc": "Fires a wave with a long cool-down.",
-      "url": "http://videos.chrisw.org/bloodtide/units/turtle/WaveCannon.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/turtle/WaveCannonPreview.png",
+      "url": "videos/bloodtide/units/turtle/WaveCannon.mp4",
+      "img": "videos/bloodtide/units/turtle/WaveCannonPreview.png",
       "cool": "3 seconds",
       "rng": "30 meters"
     },
@@ -30,8 +30,8 @@
       "name": "Shell Barrier",
       "icon": "bloodtide/units/turtle/ShellBarrierIcon.jpeg",
       "desc": "Nullifies all damage done to the turtle for a short period of time.",
-      "url": "http://videos.chrisw.org/bloodtide/units/turtle/ShellBarrier.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/turtle/ShellBarrierPreview.png",
+      "url": "videos/bloodtide/units/turtle/ShellBarrier.mp4",
+      "img": "videos/bloodtide/units/turtle/ShellBarrierPreview.png",
       "cool": "10 seconds",
       "rng": "N/A"
     },
@@ -39,8 +39,8 @@
       "name": "Bite",
       "icon": "bloodtide/units/turtle/BiteIcon.jpeg",
       "desc": "A fast, strong bite attack that pierces through enemy defense.",
-      "url": "http://videos.chrisw.org/bloodtide/units/turtle/Bite.mp4",
-      "img": "http://videos.chrisw.org/bloodtide/units/turtle/BitePreview.png",
+      "url": "videos/bloodtide/units/turtle/Bite.mp4",
+      "img": "videos/bloodtide/units/turtle/BitePreview.png",
       "cool": "10 seconds",
       "rng": "Melee"
     }
