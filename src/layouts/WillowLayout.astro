@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title='Watt Bodies' header_image='/willow/Logo.gif'>
+
+	<Fragment slot="base_header">
+
+		<slot name="header" />
+
+	</Fragment>
+
+	<Fragment slot="base_body">
+
+		<slot name="body" />
+
+		<div id = "project_navigation">
+		
+			<a href = "/willow">Home</a>
+			<a href = "/willow/info">Info</a>
+			<a href = "/willow/media">Media</a>
+			<a href = "/willow/download">Download</a>
+		
+		</div>
+
+	</Fragment>
+
+</BaseLayout>

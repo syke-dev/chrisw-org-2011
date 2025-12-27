@@ -1,86 +1,82 @@
 ---
+
+import WillowLayout from '@layouts/WillowLayout.astro';
+
+import BafSlider from '/src/components/BafSlider.astro'
+
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<WillowLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
-	
-    <link rel = "stylesheet" type = "text/css" href = "willow.css" />
-	<link rel = "stylesheet" type = "text/css" href = "shared/ui/css/ui-lightness/jquery-ui-1.8.14.custom.css"></link>
-	
-    <script type = "text/javascript" src = "shared/ui/js/jquery-ui-1.8.14.custom.min.js"></script>
-    <script type = "text/javascript" src = "shared/slider.js"></script>
-    
-    <script type = "text/javascript">
-      $(document).ready(function() {
-      
-        init_slider("#flowerpots_redslider");
-        init_slider("#flowerpots_greenslider");
-        init_slider("#well_blueslider");
-        init_slider("#fireplace_redslider");
-        init_slider("#willow_colorslider");
-      });
-    </script>
+	<Fragment slot="body">
 
-    <title> Willow </title>
-  
-  </head>
-  
-  <body>
-
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "subpage_content">
-      
-        <h2> Color Shader </h2>
+		<div id = "subpage_content">
 		
-        {% include chrisw/baf-slider.html id="flowerpots_redslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Red.jpg" title="Red Unlocked" %}
-        {% include chrisw/baf-slider.html id="flowerpots_greenslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Green.jpg" title="Green Unlocked" %}
-        {% include chrisw/baf-slider.html id="well_blueslider" before="Well-Gray.jpg" after="Well-Blue.jpg" title="Blue Unlocked" %}
-        {% include chrisw/baf-slider.html id="fireplace_redslider" before="Fireplace-Gray.jpg" after="Fireplace-Red.jpg" title="Red Unlocked" %}
-        {% include chrisw/baf-slider.html id="willow_colorslider" before="Willow-Gray.jpg" after="Willow-Colors.jpg" title="Red, Green & Blue Unlocked" %}
+			<h2> Color Shader </h2>
+			
+			<BafSlider id="flowerpots_redslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Red.jpg" title="Red Unlocked" />
+			<BafSlider id="flowerpots_greenslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Green.jpg" title="Green Unlocked" />
+			<BafSlider id="well_blueslider" before="Well-Gray.jpg" after="Well-Blue.jpg" title="Blue Unlocked" />
+			<BafSlider id="fireplace_redslider" before="Fireplace-Gray.jpg" after="Fireplace-Red.jpg" title="Red Unlocked" />
+			<BafSlider id="willow_colorslider" before="Willow-Gray.jpg" after="Willow-Colors.jpg" title="Red, Green & Blue Unlocked" />
 
-        <h2> Media </h2>
-        
-        <div style = "width: 610px; text-align: center;">
-        
-          <img src="Map.jpg" height="410" width="610"/><br>
-          
-          Map Sketch<br><br>
+			<h2> Media </h2>
+			
+			<div style = "width: 610px; text-align: center;">
+			
+			<img src="Map.jpg" height="410" width="610"/><br>
+			
+			Map Sketch<br><br>
 
-          <img src="MainMenu.jpg" height="410" width="610"/><br>
-          
-          Main Menu<br><br>
-          
-        </div>
-          
-        <h2> Inventory </h2>
-        
-        <div style = "width: 610px; text-align: center;">
-          
-          <img src="Shovel.jpg" height="160" width="160"/>
-          <img src="Hammer.jpg" height="160" width="160"/>
-          <img src="Matches.jpg" height="160" width="160"/>
-          <img src="Pin_Clover.jpg" height="160" width="160"/>
-          <img src="Soap.jpg" height="160" width="160"/>
-          <img src="Log.jpg" height="160" width="160"/>
-        
-        </div>
-  
-      </div>
-      
-      {% include willow/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
+			<img src="MainMenu.jpg" height="410" width="610"/><br>
+			
+			Main Menu<br><br>
+			
+			</div>
+			
+			<h2> Inventory </h2>
+			
+			<div style = "width: 610px; text-align: center;">
+			
+			<img src="Shovel.jpg" height="160" width="160"/>
+			<img src="Hammer.jpg" height="160" width="160"/>
+			<img src="Matches.jpg" height="160" width="160"/>
+			<img src="Pin_Clover.jpg" height="160" width="160"/>
+			<img src="Soap.jpg" height="160" width="160"/>
+			<img src="Log.jpg" height="160" width="160"/>
+			
+			</div>
+	
+		</div>
 
-</html>
+	</Fragment>
+
+</WillowLayout>
+
+<style>
+
+	.beforeafter
+	{
+		margin-top: 20px;
+		height: 440px;
+		width: 600px;
+		text-align: center;
+	}
+
+	.beforeafter .images
+	{
+		height: 400px;
+	}
+
+	.slider
+	{
+		margin-top: 5px;
+	}
+
+</style>
+
+
+// <link rel = "stylesheet" type = "text/css" href = "shared/ui/css/ui-lightness/jquery-ui-1.8.14.custom.css"></link>
+
+// <script type = "text/javascript" src = "shared/ui/js/jquery-ui-1.8.14.custom.min.js"></script>
+// <script type = "text/javascript" src = "shared/slider.js"></script>
