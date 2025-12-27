@@ -1,0 +1,23 @@
+---
+
+import './highslide.css';
+
+const { image, heading, height, width } = Astro.props;
+
+---
+
+<script src='./highslide.js'></script>
+
+<a class="highslide" href={image} heading={heading}>
+	<img src={image} height={height} width={width} />
+</a>
+<div class = 'highslide-caption'>
+	<slot />
+</div>
+
+<style>
+	/* Hide by default */
+	.highslide-caption {
+		display: none;
+	}
+</style>

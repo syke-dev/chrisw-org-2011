@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title='Blind Man' header_image='/blindman/Logo.jpg'>
+
+	<Fragment slot="base_header">
+
+		<slot name="header" />
+
+	</Fragment>
+
+	<Fragment slot="base_body">
+
+		<slot name="body" />
+
+		<div id = "project_navigation">
+		
+			<a href = "/blindman">Home</a>
+			<a href = "/blindman/info">Info</a>
+		
+		</div>
+
+	</Fragment>
+
+</BaseLayout>
