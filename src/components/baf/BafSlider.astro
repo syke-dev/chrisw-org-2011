@@ -1,0 +1,68 @@
+---
+
+const { title, before, after } = Astro.props;
+
+---
+
+<div class="beforeafter">
+
+	<div>{ title }</div>
+
+	<div class="images" style="width: 600px; height: 400px">
+		<img class="before" src={ before } style="width: 600px; height: 400px" />
+		<img class="after" src={ after } style="width: 600px; height: 400px" />
+	</div>
+
+	<input type="range" min="1" max="100" value="50" class="input" style="width: 600px;">
+
+</div>
+
+<script>
+
+	var bafs = document.getElementsByClassName('beforeafter');
+
+	Array.from(bafs).forEach((baf) => {
+		init_slider(baf);
+	});
+
+	function init_slider(baf) {
+
+		var images = baf.querySelector('.images');
+
+		var before = images.querySelector('.before');
+		var after = images.querySelector('.after');
+
+		var slider = baf.querySelector('.input');
+
+		var width = parseInt(images.style.width, 10);
+		var height = parseInt(images.style.height, 10);
+		var middle = width * 0.5;
+
+		images.style.position = 'relative';
+
+		before.style.width = width;
+		before.style.height = height
+		before.style.position = 'absolute';
+		before.style.top = 0;
+		before.style.right = '0';
+		before.style.clip = 'rect(0px ' + middle + 'px ' + height + 'px 0px)';
+
+		after.style.width = width;
+		after.style.height = height
+		after.style.position = 'absolute';
+		after.style.top = 0;
+		after.style.right = '0';
+		after.style.clip = 'rect(0px ' + width + 'px ' + height + 'px ' + middle + 'px)';
+		
+		slider.oninput = function() {
+			var width = parseInt(images.style.width, 10);
+			var height = parseInt(images.style.height, 10);
+			var middle = width * slider.value / 100;
+
+			before.style.clip = 'rect(0px ' + middle + 'px ' + height + 'px 0px)';
+			after.style.clip = 'rect(0px ' + width + 'px ' + height + 'px ' + middle + 'px)';
+		}
+
+	}
+
+</script>
