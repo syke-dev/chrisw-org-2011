@@ -1,75 +1,227 @@
 ---
 
+// https://zachpatrick.com/blog/building-a-before-and-after-image-slider
+
 const { title, before, after, id } = Astro.props;
 
 ---
 
-<div class="beforeafter">
+{ title }
 
-	{ title }
+<div class="overflow-hidden before-after-wrapper rounded-3xl">
 
-	<div class="images">
-		<img class="before" src="{ before }" />
-		<img class="after" src="{ after }" />
+	<div class="before-image-wrapper" style="width: 50%;">
+		<div class="before-image" style=`background-image: url(${before})`></div>
 	</div>
 
-	<div class="slider" id="{ id }"></div>
+	<div class="after-image" style=`background-image: url(${after})`></div>
+	
+	<span class="handle draggable"></span>
 
 </div>
 
 <script>
-/*
-	var sliders = document.getElementsByClassName('slider');
-	foreach (var slider in sliders) {
-		init_slider(slider.id);
+
+	// get the div containing both the before and after images
+	var imageWrappers = document.getElementsByClassName('before-after-wrapper');
+	
+	// check if the user is using a touch device
+	const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+	// initialize the dragElement function below
+	Array.from(imageWrappers).forEach((imageWrapper) => {
+		dragElement(imageWrapper, imageWrapper.querySelector('.handle'));
+	});
+
+	// get the current coordinates of the .handle
+	function getCoords(e) {
+		let x, y;
+
+		// get the current x and y of the users input (dragging .handle)
+		// check if the device is a touch device
+		if (isTouch) {
+			// touchscreen: if the devices is a touch device, the x and y will be in the touches[0] object
+			x = e.touches[0].clientX;
+			y = e.touches[0].clientY;
+		} else {
+			// 
+			// desktop: if the device is not a touch device we can get it right from the event (e) object
+			x = e.clientX;
+			y = e.clientY;
+		}
+
+		return { x, y };
 	}
 
-	function init_slider(id) {
-		$(id).slider();
-		$(id).slider('value', 50);
+	// listens for the user touch/mouse input on the .handle element and drags the slider
+	function dragElement(imageWrapper, el) {
+		let pos1 = 0,
+			pos2 = 0,
+			pos3 = 0,
+			pos4 = 0;
 
-		images = $(id).prev('.images');
-		
-		images.css('position', 'relative');
-		
-		width = parseInt(images.css('width'), 10);
-		height = parseInt(images.css('height'), 10);
-		middle = width * 0.5;
+		// initialize the slider being dragged when the .handle is pressed
+		if (isTouch) {
+			el.ontouchstart = dragInit;
+		} else {
+			el.onmousedown = dragInit;
+		}
 
-		before = images.children('.before');
-		after = images.children('.after');
+		// call elementDrag/closeElementDrag when the users interacts with .handle
+		function dragInit(e) {
+			e = e || window.event;
+			e.preventDefault();
 
-		before.css('width', width );
-		before.css('height', height);
-		before.css('position', 'absolute');
-		before.css('top', '0');
-		before.css('right', '0');
-		before.css('clip', 'rect(0px ' + middle + 'px ' + height + 'px 0px)');
-		
-		after.css('width', width );
-		after.css('height', height);
-		after.css('position', 'absolute');
-		after.css('top', '0');
-		after.css('right', '0');
-		after.css('clip', 'rect(0px ' + width + 'px ' + height + 'px ' + middle + 'px)');
-		
-		$(id).slider({
-			slide: function(event, ui) 
-			{
-			images = $(this).prev('.images');
-			
-			width = parseInt(images.css('width'), 10);
-			height = parseInt(images.css('height'), 10);
+			// get the mouse cursor/touch position at startup
+			const { x, y } = getCoords(e);
+			pos3 = x;
+			pos4 = y;
 
-			middle = width * (ui.value / 100);
-
-			before = images.children('.before');
-			after = images.children('.after');
-			
-			before.css('clip', 'rect(0px ' + middle + 'px ' + height + 'px 0px)');
-			after.css('clip', 'rect(0px ' + width + 'px ' + height + 'px ' + middle + 'px)');
+			if (isTouch) {
+				document.ontouchend = closeElementDrag; // stop moving
+				document.ontouchmove = elementDrag; // call function whenever the cursor moves
+			} else {
+				document.onmouseup = closeElementDrag; // stop moving
+				document.onmousemove = elementDrag; // call function whenever the cursor moves
 			}
-		});
+		}
+
+		// as the element is dragged update the .before-image-wrapper width
+		function elementDrag(e) {
+			e = e || window.event;
+			e.preventDefault();
+
+			// calculate new cursor position:
+			const { x, y } = getCoords(e);
+			pos1 = pos3 - x;
+			pos2 = pos4 - y;
+			pos3 = x;
+			pos4 = y;
+
+			let wrapperRight = el.offsetLeft - pos1;
+
+			if (wrapperRight >= 0 && wrapperRight <= imageWrapper.offsetWidth) {
+				// set the element's new position:
+				el.style.left = `${el.offsetLeft - pos1}px`;
+				imageWrapper.querySelector('.before-image-wrapper').style.width = `${wrapperRight}px`;
+			}
+		}
+
+		function closeElementDrag() {
+			if (isTouch) {
+				document.ontouchend = null;
+				document.ontouchmove = null;
+			} else {
+				document.onmouseup = null;
+				document.onmousemove = null;
+			}
+		}
 	}
-*/
+
 </script>
+
+<style>
+
+	.before-after-wrapper {
+		outline: 4px solid green;
+		position: relative;
+		aspect-ratio: 3/2;
+	}
+
+	.before-after-wrapper::before {
+		background-color: hsla(172, 61%, 82%, 75%);
+		border-radius: 40px;
+		top: 10px;
+		color: green;
+		content: 'before';
+		left: 10px;
+		opacity: 0;
+		padding: 5px 10px;
+		position: absolute;
+		transition: opacity 200ms ease-in-out;
+		z-index: 15;
+	}
+
+	:global(.before-after-wrapper.show-before::before) {
+		opacity: 1;
+	}
+
+	.before-after-wrapper::after {
+		background-color: hsla(172, 61%, 82%, 75%);
+		border-radius: 40px;
+		top: 10px;
+		color: green;
+		opacity: 0;
+		padding: 5px 10px;
+		position: absolute;
+		right: 10px;
+		transition: opacity 200ms ease-in-out;
+		z-index: 15;
+		content: 'after';
+	}
+
+	:global(.before-after-wrapper.show-after::after) {
+		opacity: 1;
+	}
+
+	.before-image-wrapper {
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		z-index: 10;
+	}
+
+	.before-image {
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.after-image {
+		background-size: cover;
+		inset: 0;
+		position: absolute;
+	}
+
+	.handle {
+		align-items: center;
+		background: green;
+		bottom: 0;
+		cursor: col-resize;
+		display: flex;
+		justify-content: center;
+		left: 50%;
+		position: absolute;
+		top: 0;
+		width: 4px;
+		z-index: 20;
+	}
+
+	.handle::before {
+		content: '';
+		position: absolute;
+		inset: 0 -20px;
+	}
+
+	.handle::after {
+		align-items: center;
+		background: darkgreen;
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 512 512"><path fill="hsl(172, 61%, 82%)" d="M505.7 265.7c3-3 3.1-7.9 .2-11.1l-104-112c-3-3.2-8.1-3.4-11.3-.4s-3.4 8.1-.4 11.3L481.7 252 23.3 252l90.3-90.3c3.1-3.1 3.1-8.2 0-11.3s-8.2-3.1-11.3 0l-104 104c-3.1 3.1-3.1 8.2 0 11.3l104 104c3.1 3.1 8.2 3.1 11.3 0s3.1-8.2 0-11.3L23.3 268l457.4 0-90.3 90.3c-3.1 3.1-3.1 8.2 0 11.3s8.2 3.1 11.3 0l104-104z"/></svg>');
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		color: green;
+		content: '';
+		display: flex;
+		font-size: 16px;
+		font-weight: bold;
+		justify-content: center;
+		max-height: 40px;
+		max-width: 40px;
+		min-height: 40px;
+		min-width: 40px;
+	}
+
+</style>
