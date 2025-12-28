@@ -1,0 +1,25 @@
+---
+
+import { getEntry } from 'astro:content';
+
+import BloodTideLayout from '@layouts/BloodTideLayout.astro';
+
+const { unit } = Astro.props;
+
+const unitData = await getEntry('bloodTideUnits', unit);
+
+import unitdisplay from '@components/unitdisplay/unitdisplay.astro'
+
+---
+
+<BloodTideLayout>
+
+	<Fragment slot="body">
+
+		Before
+		<unitdisplay unit={unit} />
+		after
+
+	</Fragment>
+
+</BloodTideLayout>

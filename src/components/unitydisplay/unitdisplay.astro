@@ -1,0 +1,145 @@
+---
+
+import './units.css';
+import './units.js';
+
+---
+
+
+<!-- Unit -->
+
+<div id = "unit">
+
+	<!-- Unit Top -->
+	
+	<div id = "unit_top">
+
+		<div id = "unit_left">
+			<span class = "unit_name{{ include.unit.class }}">{{ include.unit.stats.name }}</span><br><br>
+			<img src = "{{ include.unit.stats.icon }}" />
+		</div>
+		
+		<div id = "unit_right">
+
+			<!-- Commander Stats -->
+
+			<div id = "unit_stats{{ include.unit.class }}">
+
+				<span class = "stats_title">Commander Stats</span><br>
+
+				<div class = "left">
+					Health:<br>
+					Strength:<br>
+					Armor:<br>
+					Move Speed:<br>
+					Faction:<br>
+				</div>
+
+				<div class = "right">
+					{{ include.unit.stats.hp }}<br>
+					{{ include.unit.stats.str }}<br>
+					{{ include.unit.stats.arm }}<br>
+					{{ include.unit.stats.move }}<br>
+					{{ include.unit.stats.fac }}<br>
+				</div>
+
+			</div>
+
+			<!-- Unit Stats -->
+
+			<div id = "unit_stats{{ include.unit.class }}">
+
+				<span class = "stats_title">Unit Stats</span><br>
+
+				<div class = "left">
+					Health:<br>
+					Strength:<br>
+					Armor:<br>
+					Move Speed:<br>
+					Attack Range:<br>
+				</div>
+			
+				<div class = "right">
+					{{ include.unit.unitstats.hp }}<br>
+					{{ include.unit.unitstats.str }}<br>
+					{{ include.unit.unitstats.arm }}<br>
+					{{ include.unit.unitstats.move }}<br>
+					{{ include.unit.unitstats.rng }}<br>
+				</div>
+
+			</div><br>
+	
+			<!-- Commander Ability Videos -->
+
+			<div id = "unit_video">
+
+				<div id='jwplayer'></div>
+			
+				{% for ability in include.unit.abilities %}
+			
+				<script type='text/javascript'>
+					jwplayer('jwplayer').setup({
+						'flashplayer': 'http://www.chrisw.org/web/shared/jwplayer/player.swf',
+						'file': '{{ ability.url }}',
+						'image': '{{ ability.img }}',
+						'controlbar': 'none',
+						'dock': 'false',
+						'width': '480',
+						'height': '270'
+					});
+				</script>
+			
+				{% break %}
+				{% endfor %}
+			
+			</div>
+
+			<div id = "unit_buttons">
+
+				{% for ability in include.unit.abilities %}
+
+					<img id = "ability_{{ ability.name }}" src = "{{ ability.icon }}"
+						onclick = "changevideo('#ability_{{ ability.name }}', '{{ ability.url }}', '{{ ability.img }}')"/>
+					<br>
+
+				<script type='text/javascript'>
+					updateicon('#ability_{{ ability.name }}', '{{ ability.url }}', '{{ ability.img }}');
+				</script>
+
+				{% endfor %}
+
+			</div>
+
+		<!-- /Unit Right -->
+
+		</div>
+	
+	<!-- /Unit Top -->
+
+	</div>
+
+	<!-- Unit Abilities -->
+	
+	<div id = "unit_abilities">
+
+		<span id = "title{{ include.unit.class }}">Abilities</span><br><hr>
+
+			{% for ability in include.unit.abilities %}
+				
+			<div class = "ability">
+				<img src = "{{ ability.icon }}"/>
+				<div class = "ability_desc">
+					<span class = "name{{ include.unit.class }}">{{ ability.name }}</span> - {{ ability.desc }}<br><br>
+					<div class = "left">cooldown:<br>range:</div> 
+					<div class = "left">{{ ability.cool }}<br>{{ ability.rng }}</div> 
+					<div class = "break"></div>
+				</div>
+			</div>
+
+		{% endfor %}
+
+	</div>
+
+<!-- /Unit -->
+
+</div><br>

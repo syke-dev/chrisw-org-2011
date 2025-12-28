@@ -1,37 +1,5 @@
 ---
+import BloodTideUnitLayout from '@layouts/BloodTideUnitLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-  <head>
-  
-    {% include chrisw/header.html %}
-    
-    <link rel = "stylesheet" type = "text/css" href = "bloodtide/bloodtide.css" />
-    <link rel = "stylesheet" type = "text/css" href = "bloodtide/units/units.css" />
-
-    <title> Blood Tide </title>
-  
-  </head>
-  
-  <body>
-
-    <div id = "global_mainarea">
-    
-      <img id = "btlogo" src = "bloodtide/Logo.gif" />
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      {% include bloodtide/unitdisplay.html unit=site.data.bombship %}
-        
-      {% include bloodtide/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
-
-</html>
+<BloodTideUnitLayout unit='bombship' />
