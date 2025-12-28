@@ -1,7 +1,0 @@
-SetEnv CHRISW_HEADER web/chrisw/header.shtml
-SetEnv CHRISW_TITLE web/chrisw/title.shtml
-SetEnv CHRISW_NAVBAR web/chrisw/navbar.shtml
-SetEnv CHRISW_FOOTER web/chrisw/footer.shtml
-SetEnv JQUERY web/chrisw/jquery.shtml
-SetEnv JQUERY_UI web/chrisw/jquery-ui.shtml
-SetEnv HIGHSLIDE web/chrisw/highslide.shtml
