@@ -2,9 +2,11 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title='Blood Tide' header_image='wattbodies/Logo.png'>
+<BaseLayout title='Blood Tide'>
 
 	<Fragment slot="base_header">
+
+		<img id = "btlogo" src = "/bloodtide/Logo.gif" />
 
 		<slot name="header" />
 
@@ -15,13 +17,12 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 		<slot name="body" />
 
 		<div id = "project_navigation">
-		
-			<a href = "http://bloodtide.chrisw.org">Home</a>
-			<a href = "http://bloodtide.chrisw.org/info.html">Info</a>
-			<a href = "http://bloodtide.chrisw.org/units">Units</a>
-			<a href = "http://bloodtide.chrisw.org/team.html">Team</a>
-			<a href = "http://bloodtide.chrisw.org/download.html">Download</a>
-		
+
+			<a href = "/bloodtide">Home</a>
+			<a href = "/bloodtide/info">Info</a>
+			<a href = "/bloodtide/units">Units</a>
+			<a href = "/bloodtide/download">Download</a>
+
 		</div>
 
 	</Fragment>
@@ -29,10 +30,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-
-	#global_title {
-		background: #33A1DE
-	}
 
 	#btlogo {
 		left: 50%;

@@ -1,115 +1,92 @@
 ---
+import BloodTideLayout from '@layouts/BloodTideLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<BloodTideLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
-    
-    <link rel = "stylesheet" type = "text/css" href = "bloodtide.css" />
+	<Fragment slot="body">
+		
+		<div id = "gameinfo_content">
+		
+			<h2> Background </h2>
+			
+			<p>War on Earth has rendered its surface uninhabitable for the human race. 
+			In order to preserve themselves, humans have moved to the depths of the ocean and established new colonies. 
+			However, the Humans' fight for survival is threatening the delicate ecosystem, which an ancient aquatic-human race, 
+			known as Piscivian, has survived within for millennia. 
+			The limited underwater resources make it impossible to share the sea, thus the two factions are gearing up for battle -- 
+			a battle that will determine which race will thrive and which will become a memory.</p>
+			
+			<br>
+			
+			<div class = "thumbnails">
+				<a href = "MainMenu.jpg"><img src = "MainMenu.jpg" /></a>
+				<a href = "GameLobby.jpg"><img src = "GameLobby.jpg" /></a>
+			</div>
+			
+			<br>
+			
+			<h2> Gameplay </h2>
+			
+			<p>At the start of a game session, each faction has three headquarters. 
+			These headquarters act as spawning points for different types of units. 
+			The units can then be controlled by the player in tactical-commander mode in a similar way to other RTS games. 
+			In addition to spawning units, the headquarters can be further specialized by building farms, training grounds, and guard towers around them. 
+			Headquarters and buildings can be attacked by enemy units and field-commanders. 
+			When a faction loses all three of its headquarters, that faction loses the game.</p>
+			
+			<br>
+			
+			<div class = "thumbnails">
+				<a href = "HumanHQs"><img src = "HumanHQs" /></a>
+				<a href = "PiscivianHQs"><img src = "PiscivianHQs" /></a>
+			</div>
+			
+			<br>
+			
+			<h2> Tactical-Commander Mode </h2>
+			
+			<p>The tactical-commander is played similar to an RTS game with a bird's eye view.
+			When the game begins, the player starts in the tactical-commander role. 
+			As the tactical-commander, the player has the ability to issue orders to units and construct buildings. 
+			The orders that can be issued are: move to position, attack to position, or attack enemy unit.  
+			From this role the player can enter the field-commander role and will be returned to this role if the player's field-commander is killed.</p>
+			
+			<p>In addition to issuing orders, the player can also build three types of buildings: gaurd tower, farm and armory. 
+			The tactical-commander must strategically construct buildings to strengthen the faction's units and protect his or her bases.</p>
+			
+			<br>
+			
+			<div class = "thumbnails">
+				<a href = "ConstructBuilding.jpg"><img src = "ConstructBuilding.jpg" /></a>
+				<a href = "Tactical-Commander.jpg"><img src = "Tactical-Commander.jpg" /></a>
+			</div>
+			
+			<br>
+			
+			<h2> Field-Commander Mode </h2>
+			
+			<p>The field-commander is played like an action game with a third-person chase camera.  
+			At the start of the game session, the player has the ability to choose which type of field-commander to play as. 
+			Each headquarters will spawn a different type of field-commander that coincides with the regular units that spawn from that headquarters. 
+			If a player wishes to change to a different field-commander type, the player must move the field-commander back to any friendly headquarters.</p>
+			
+			<p>All units and the field-commander will start with one attack. For instance, both a unit and field-commander turtle will start off with the <i>wave cannon</i> ability;
+			however, only the field-commander is capable of unlocking the next two abilities for the unit type. These abilities are unlocked for the field-commander upon promotion, 
+			which are <i>shell barrier</i> and <i>bite</i> for the turtle commander. 
+			When a training facility is built, both the field-commander and the normal units of that type will be upgraded.</p>
+			
+			<br>
+			
+			<div class = "thumbnails">
+				<a href = "SelectCommander.jpg"><img src = "SelectCommander.jpg" /></a>
+				<a href = "Field-Commander.jpg"><img src = "Field-Commander.jpg" /></a>
+			</div>
+			
+			<br>
+			
+		</div>
 
-    <title> Blood Tide </title>
-  
-  </head>
-  
-  <body>
+	</Fragment>
 
-    <div id = "global_mainarea">
-    
-      <img id = "btlogo" src = "Logo.gif" />
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "gameinfo_content">
-      
-        <h2> Background </h2>
-        
-        <p>War on Earth has rendered its surface uninhabitable for the human race. 
-        In order to preserve themselves, humans have moved to the depths of the ocean and established new colonies. 
-        However, the Humans' fight for survival is threatening the delicate ecosystem, which an ancient aquatic-human race, 
-        known as Piscivian, has survived within for millennia. 
-        The limited underwater resources make it impossible to share the sea, thus the two factions are gearing up for battle -- 
-        a battle that will determine which race will thrive and which will become a memory.</p>
-        
-        <br>
-        
-        <div class = "thumbnails">
-          <a href = "MainMenu.jpg"><img src = "MainMenu.jpg" /></a>
-          <a href = "GameLobby.jpg"><img src = "GameLobby.jpg" /></a>
-        </div>
-        
-        <br>
-        
-        <h2> Gameplay </h2>
-        
-        <p>At the start of a game session, each faction has three headquarters. 
-        These headquarters act as spawning points for different types of units. 
-        The units can then be controlled by the player in tactical-commander mode in a similar way to other RTS games. 
-        In addition to spawning units, the headquarters can be further specialized by building farms, training grounds, and guard towers around them. 
-        Headquarters and buildings can be attacked by enemy units and field-commanders. 
-        When a faction loses all three of its headquarters, that faction loses the game.</p>
-        
-        <br>
-        
-        <div class = "thumbnails">
-          <a href = "HumanHQs"><img src = "HumanHQs" /></a>
-          <a href = "PiscivianHQs"><img src = "PiscivianHQs" /></a>
-        </div>
-        
-        <br>
-        
-        <h2> Tactical-Commander Mode </h2>
-        
-        <p>The tactical-commander is played similar to an RTS game with a bird's eye view.
-        When the game begins, the player starts in the tactical-commander role. 
-        As the tactical-commander, the player has the ability to issue orders to units and construct buildings. 
-        The orders that can be issued are: move to position, attack to position, or attack enemy unit.  
-        From this role the player can enter the field-commander role and will be returned to this role if the player's field-commander is killed.</p>
-        
-        <p>In addition to issuing orders, the player can also build three types of buildings: gaurd tower, farm and armory. 
-        The tactical-commander must strategically construct buildings to strengthen the faction's units and protect his or her bases.</p>
-        
-        <br>
-        
-        <div class = "thumbnails">
-          <a href = "ConstructBuilding.jpg"><img src = "ConstructBuilding.jpg" /></a>
-          <a href = "Tactical-Commander.jpg"><img src = "Tactical-Commander.jpg" /></a>
-        </div>
-        
-        <br>
-        
-        <h2> Field-Commander Mode </h2>
-        
-        <p>The field-commander is played like an action game with a third-person chase camera.  
-        At the start of the game session, the player has the ability to choose which type of field-commander to play as. 
-        Each headquarters will spawn a different type of field-commander that coincides with the regular units that spawn from that headquarters. 
-        If a player wishes to change to a different field-commander type, the player must move the field-commander back to any friendly headquarters.</p>
-        
-        <p>All units and the field-commander will start with one attack. For instance, both a unit and field-commander turtle will start off with the <i>wave cannon</i> ability;
-        however, only the field-commander is capable of unlocking the next two abilities for the unit type. These abilities are unlocked for the field-commander upon promotion, 
-        which are <i>shell barrier</i> and <i>bite</i> for the turtle commander. 
-        When a training facility is built, both the field-commander and the normal units of that type will be upgraded.</p>
-        
-        <br>
-        
-        <div class = "thumbnails">
-          <a href = "SelectCommander.jpg"><img src = "SelectCommander.jpg" /></a>
-          <a href = "Field-Commander.jpg"><img src = "Field-Commander.jpg" /></a>
-        </div>
-        
-        <br>
-        
-      </div>
-      
-      {% include bloodtide/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
-
-</html>
+</BloodTideLayout>

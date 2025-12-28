@@ -1,51 +1,28 @@
 ---
+import BloodTideLayout from '@layouts/BloodTideLayout.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<BloodTideLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
+	<Fragment slot="body">
 
-    <link rel = "stylesheet" type = "text/css" href = "bloodtide.css" />
+		<div id = "gamedownload_content">
+		
+			<h2> Installation </h2>
+			
+			Blood Tide requires the August 2009 version (or later) DirectX SDK to be installed.<br>
+			The SDK can be downloaded here: <a href = "http://msdn.microsoft.com/en-us/directx/aa937788.aspx">http://msdn.microsoft.com/en-us/directx/aa937788.aspx</a><br>
+			
+			<br>
+			
+			Blood Tide is playable on Windows XP / Vista / 7.
+			
+			<br><br>
+			
+			<a href = "//downloads.chrisw.org/BloodTide.zip">BloodTide.zip</a> (287 MB / 593 MB unzipped)
 
-    <title> Blood Tide </title>
-  
-  </head>
-  
-  <body>
+		</div>
 
-    <div id = "global_mainarea">
-    
-      <img id = "btlogo" src = "../Logo.gif" />
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "gamedownload_content">
-      
-        <h2> Installation </h2>
-        
-        Blood Tide requires the August 2009 version (or later) DirectX SDK to be installed.<br>
-        The SDK can be downloaded here: <a href = "http://msdn.microsoft.com/en-us/directx/aa937788.aspx">http://msdn.microsoft.com/en-us/directx/aa937788.aspx</a><br>
-        
-        <br>
-        
-        Blood Tide is playable on Windows XP / Vista / 7.
-        
-        <br><br>
-        
-        <a href = "//downloads.chrisw.org/BloodTide.zip">BloodTide.zip</a> (287 MB / 593 MB unzipped)
+	</Fragment>
 
-      </div>
-      
-      {% include bloodtide/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
-
-</html>
+</BloodTideLayout>

@@ -35,7 +35,7 @@ const { title, header_image } = Astro.props;
 		<div id = "global_mainarea">
 		
 			<div id = "global_title" >
-				<img src={header_image} />
+				{header_image && <img src={header_image} />}
 			</div>
 
 			<div id = "global_navbar">
@@ -72,6 +72,7 @@ const { title, header_image } = Astro.props;
 	#global_title {
 		position: relative;
 		height: 100px;
+		background: #33A1DE
 	}
 
 	#global_navbar {
