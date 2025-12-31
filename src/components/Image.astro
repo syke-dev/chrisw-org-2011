@@ -1,0 +1,53 @@
+---
+
+// Example: <Image src='wattbodies/robots/zoomoid.png' width={100} height={100} fit={Fit.Squeeze} />
+
+export enum Fit {
+	Contain = "contain",
+	Cover = "cover",
+	Crop = "crop",
+	Pad = "pad",
+	ScaleDown = "scale-down",
+	Squeeze = "squeeze",
+}
+
+interface Props {
+	src: string;
+	width?: Number;
+	height?: Number;
+	fit?: Fit;
+}
+
+const { src, width, height, fit } = Astro.props;
+
+const transforms = function() {
+
+	// https://developers.cloudflare.com/images/transform-images/transform-via-url/
+
+	let array: string[] = [];
+
+	array.push('format=auto');
+
+	if (Number.isFinite(width)) {
+		array.push(`width=${width}`);
+	}
+
+	if (Number.isFinite(height)) {
+		array.push(`height=${height}`);
+	}
+
+	if (fit !== undefined) {
+		array.push(`fit=${fit}`);
+	}
+
+	return array.join(',');
+
+};
+
+---
+
+<img
+	src=`https://media.chrisw.gg/cdn-cgi/image/${transforms()}/${src}`
+	width={Number.isFinite(width) ? width : undefined}
+	height={Number.isFinite(height) ? height : undefined}
+/>
