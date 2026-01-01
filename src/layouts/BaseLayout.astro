@@ -1,6 +1,6 @@
 ---
 
-import { Image } from 'astro:assets';
+import { default as Image, Fit } from '@components/Image.astro';
 
 const { title, header_image } = Astro.props;
 
@@ -35,7 +35,7 @@ const { title, header_image } = Astro.props;
 		<div id = "global_mainarea">
 		
 			<div id = "global_title" >
-				{header_image && <img src={header_image} />}
+				{header_image && <Image src={header_image} width={800} height={100} />}
 			</div>
 
 			<div id = "global_navbar">
