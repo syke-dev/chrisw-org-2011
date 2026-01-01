@@ -1,8 +1,18 @@
 ---
 
 import WillowLayout from '@layouts/WillowLayout.astro';
-
 import BafSlider from '/src/components/baf/BafSlider.astro'
+import { default as Image, Fit } from '@components/Image.astro';
+
+const sliders = [
+	['greenhouse/default',   'greenhouse/red-unlocked',     'Red Unlocked'],
+	['greenhouse/default',   'greenhouse/green-unlocked',   'Green Unlocked'],
+	['well/default',         'well/blue-unlocked',          'Blue Unlocked'],
+	['fireplace/default',    'fireplace/red-unlocked',      'Red Unlocked'],
+	['world/default',        'world/all-unlocked',          'All Colors Unlocked']
+]
+
+const items = ['shovel', 'hammer', 'matches', 'pin-clover', 'soap', 'log'];
 
 ---
 
@@ -13,39 +23,34 @@ import BafSlider from '/src/components/baf/BafSlider.astro'
 		<div id = "subpage_content">
 		
 			<h2> Color Shader </h2>
-			
-			<BafSlider id="flowerpots_redslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Red.jpg" title="Red Unlocked" />
-			<BafSlider id="flowerpots_greenslider" before="FlowerPots-Gray.jpg" after="FlowerPots-Green.jpg" title="Green Unlocked" />
-			<BafSlider id="well_blueslider" before="Well-Gray.jpg" after="Well-Blue.jpg" title="Blue Unlocked" />
-			<BafSlider id="fireplace_redslider" before="Fireplace-Gray.jpg" after="Fireplace-Red.jpg" title="Red Unlocked" />
-			<BafSlider id="willow_colorslider" before="Willow-Gray.jpg" after="Willow-Colors.jpg" title="Red, Green & Blue Unlocked" />
+
+			{sliders.map((slider) => (
+
+				<BafSlider
+					before = `/willow/shader/${slider[1]}.jpg`
+					after  = `/willow/shader/${slider[0]}.jpg`
+					title  = `${slider[2]}`
+				/>
+
+			))}
 
 			<h2> Media </h2>
 			
-			<div style = "width: 610px; text-align: center;">
-			
-			<img src="Map.jpg" height="410" width="610"/><br>
+			<Image src='/willow/misc/map.jpg' width={610} height={410} fit={Fit.Squeeze} /><br>
 			
 			Map Sketch<br><br>
 
-			<img src="MainMenu.jpg" height="410" width="610"/><br>
+			<Image src='/willow/misc/main-menu.jpg' width={610} height={410} fit={Fit.Squeeze} /><br>
 			
 			Main Menu<br><br>
 			
-			</div>
-			
 			<h2> Inventory </h2>
-			
-			<div style = "width: 610px; text-align: center;">
-			
-			<img src="Shovel.jpg" height="160" width="160"/>
-			<img src="Hammer.jpg" height="160" width="160"/>
-			<img src="Matches.jpg" height="160" width="160"/>
-			<img src="Pin_Clover.jpg" height="160" width="160"/>
-			<img src="Soap.jpg" height="160" width="160"/>
-			<img src="Log.jpg" height="160" width="160"/>
-			
-			</div>
+
+			{items.map((item) => (
+
+				<Image src=`/willow/items/${item}.jpg` width={160} height={160} fit={Fit.Squeeze} />
+
+			))}
 	
 		</div>
 

@@ -1,19 +1,21 @@
 ---
 
+import { default as Image, Fit } from '@components/Image.astro';
+
 const { title, before, after } = Astro.props;
 
 ---
 
 <div class="beforeafter">
 
-	<div>{ title }</div>
-
 	<div class="images" style="width: 600px; height: 400px">
-		<img class="before" src={ before } style="width: 600px; height: 400px" />
-		<img class="after" src={ after } style="width: 600px; height: 400px" />
+		<Image src={ before } width={600} height={400} fit={Fit.Squeeze} clazz='before' /><br>
+		<Image src={ after  } width={600} height={400} fit={Fit.Squeeze} clazz='after'  /><br>
 	</div>
 
 	<input type="range" min="1" max="100" value="50" class="input" style="width: 600px;">
+
+	<div>{ title }</div>
 
 </div>
 
