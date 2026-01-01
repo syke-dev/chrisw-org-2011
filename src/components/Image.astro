@@ -16,9 +16,10 @@ interface Props {
 	width?: Number;
 	height?: Number;
 	fit?: Fit;
+	border?: string;
 }
 
-const { src, width, height, fit } = Astro.props;
+const { src, width, height, fit, border } = Astro.props;
 
 const transforms = function() {
 
@@ -44,10 +45,13 @@ const transforms = function() {
 
 };
 
+const imageSource = src.startsWith('/') ? src.slice(1) : src;
+
 ---
 
 <img
-	src=`https://media.chrisw.gg/cdn-cgi/image/${transforms()}/${src}`
+	src=`https://media.chrisw.gg/cdn-cgi/image/${transforms()}/${imageSource}`
 	width={Number.isFinite(width) ? width : undefined}
 	height={Number.isFinite(height) ? height : undefined}
+	border={border !== undefined ? border : undefined}
 />

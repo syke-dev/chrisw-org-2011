@@ -1,5 +1,6 @@
 ---
 import WattBodiesLayout from '@layouts/WattBodiesLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
 
 <WattBodiesLayout>
@@ -10,35 +11,31 @@ import WattBodiesLayout from '@layouts/WattBodiesLayout.astro';
 
 			<h2> Media </h2>
 			
-			<div style = "width: 650px;">
-			
-			<img src="SpaceJunkyard.png" height="410" width="610"/>
+			<Image src='/wattbodies/misc/intro.png' width={610} height={410} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
 			
-			<img src="Conveyor.png" height="200" width="200"/>
-			<img src="Hover.png" height="200" width="200"/>
-			<img src="Spikes.png" height="200" width="200"/>
+			<Image src='/wattbodies/posters/conveyor.png' width={200} height={200} fit={Fit.Squeeze} border='1px solid black' />
+			<Image src='/wattbodies/posters/hover.png' width={200} height={200} fit={Fit.Squeeze} border='1px solid black' />
+			<Image src='/wattbodies/posters/spikes.png' width={200} height={200} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
 			
-			<img src="Dousoid_Hoveroid.png" height="410" width="610"/>
+			<Image src='/wattbodies/puzzles/hover.png' width={610} height={410} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
 			
-			<img src="Question.png" height="410" width="610"/>
+			<Image src='/wattbodies/puzzles/question.png' width={610} height={410} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
 			
-			<img src="Puzzle.png" height="410" width="610"/>
+			<Image src='/wattbodies/puzzles/ramp.png' width={610} height={410} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
 			
-			<img src="Time.png" height="410" width="610"/>
+			<Image src='/wattbodies/misc/victory.png' width={610} height={410} fit={Fit.Squeeze} border='1px solid black' />
 			
 			<br><br>
-			
-			</div>
 	
 		</div>
 
