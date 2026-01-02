@@ -1,0 +1,29 @@
+---
+
+const { links = [] } = Astro.props;
+
+---
+
+<div class = "project_navigation">
+
+	{links.map((link) => (
+		<a href = `${link[0]}`><span>{link[1]}</span></a>
+	))}
+
+</div>
+
+<style>
+
+	.project_navigation {
+		text-align: center;
+		border-top: 1px dashed black;
+		margin-top: 20px;
+		word-spacing: 5px;
+		clear: both;
+
+		span {
+			margin-right: 10px;
+		}
+	}
+
+</style>

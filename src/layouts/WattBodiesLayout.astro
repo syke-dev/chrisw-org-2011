@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { default as Image, Fit } from '@components/Image.astro';
+import ProjectNavigation from '@components/ProjectNavigation.astro';
 ---
 
 <BaseLayout title='Watt Bodies'>
@@ -13,14 +14,12 @@ import { default as Image, Fit } from '@components/Image.astro';
 
 		<slot name="body" />
 
-		<div id = "project_navigation">
-		
-			<a href = "/wattbodies">Home</a>
-			<a href = "/wattbodies/info">Info</a>
-			<a href = "/wattbodies/media">Media</a>
-			<a href = "/wattbodies/download">Download</a>
-		
-		</div>
+		<ProjectNavigation links={[
+			['/wattbodies', 'Home'],
+			['/wattbodies/info', 'Info'],
+			['/wattbodies/media', 'Media'],
+			['/wattbodies/download', 'Download']
+		]} />
 
 	</Fragment>
 

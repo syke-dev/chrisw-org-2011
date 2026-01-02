@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { default as Image, Fit } from '@components/Image.astro';
+import ProjectNavigation from '@components/ProjectNavigation.astro';
 ---
 
 <BaseLayout title='Blood Tide' header_color='#33A1DE'>
@@ -9,26 +10,16 @@ import { default as Image, Fit } from '@components/Image.astro';
 		<Image src='/bloodtide/logo.gif' width={226} height={132} clazz='bloodtide_logo' />
 	</Fragment>
 
-	<xFragment slot="base_header">
-
-		<ximg id = "btlogo" src = "/bloodtide/logo.gif" />
-
-		<xslot name="header" />
-
-	</xFragment>
-
 	<Fragment slot="base_body">
 
 		<slot name="body" />
 
-		<div id = "project_navigation">
-
-			<a href = "/bloodtide">Home</a>
-			<a href = "/bloodtide/info">Info</a>
-			<a href = "/bloodtide/units">Units</a>
-			<a href = "/bloodtide/download">Download</a>
-
-		</div>
+		<ProjectNavigation links={[
+			['/bloodtide', 'Home'],
+			['/bloodtide/info', 'Info'],
+			['/bloodtide/units', 'Units'],
+			['/bloodtide/download', 'Download']
+		]} />
 
 	</Fragment>
 

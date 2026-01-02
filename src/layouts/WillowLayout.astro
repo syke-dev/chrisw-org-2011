@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { default as Image, Fit } from '@components/Image.astro';
+import ProjectNavigation from '@components/ProjectNavigation.astro';
 ---
 
 <BaseLayout title='Watt Bodies'>
@@ -13,14 +14,12 @@ import { default as Image, Fit } from '@components/Image.astro';
 
 		<slot name="body" />
 
-		<div id = "project_navigation">
-		
-			<a href = "/willow">Home</a>
-			<a href = "/willow/info">Info</a>
-			<a href = "/willow/media">Media</a>
-			<a href = "/willow/download">Download</a>
-		
-		</div>
+		<ProjectNavigation links={[
+			['/willow', 'Home'],
+			['/willow/info', 'Info'],
+			['/willow/media', 'Media'],
+			['/willow/download', 'Download']
+		]} />
 
 	</Fragment>
 
