@@ -2,7 +2,7 @@
 
 import { default as Image, Fit } from '@components/Image.astro';
 
-const { title, header_image } = Astro.props;
+const { title, header_color = 'black' } = Astro.props;
 
 ---
 
@@ -13,18 +13,9 @@ const { title, header_image } = Astro.props;
 
 		<meta http-equiv = "Content-Type" content= "text/html; charset=utf-8" />
 
-		<link rel = "stylesheet" type = "text/css" href = "//chrisw.org/web/chrisw/gamehome.css" />
-		<link rel = "stylesheet" type = "text/css" href = "//chrisw.org/web/chrisw/gameinfo.css" />
-		<link rel = "stylesheet" type = "text/css" href = "//chrisw.org/web/chrisw/gameteam.css" />
-		<link rel = "stylesheet" type = "text/css" href = "//chrisw.org/web/chrisw/gamedownload.css" />
-		<link rel = "stylesheet" type = "text/css" href = "//chrisw.org/web/shared/shared.css" />
-		
 		<link rel= "shortcut icon" href= "/favicon.ico" type= "image/x-icon" />
 
-		<script type = "text/javascript" src = "//chrisw.org/web/shared/shared.js"></script>
-		<script type = "text/javascript" src = "//chrisw.org/web/shared/jquery.js"></script>
-
-		<title> {title} </title>
+		<title>{title}</title>
 
 		<slot name="base_header" />
 
@@ -33,11 +24,11 @@ const { title, header_image } = Astro.props;
 	<body>
 
 		<div id = "global_mainarea">
-		
-			<div id = "global_title" >
-				{header_image && <Image src={header_image} width={800} height={100} />}
-			</div>
 
+			<div id = "global_title">
+				<slot name="header_image" />
+			</div>
+			
 			<div id = "global_navbar">
 			
 				<ul>
@@ -59,6 +50,20 @@ const { title, header_image } = Astro.props;
 
 </html>
 
+<style define:vars={{ header_color }}>
+
+	#global_title {
+		background: var(--header_color);
+		display: flex;
+		justify-content: center;
+		position: relative;
+		height: 100px;
+	}
+
+<style>
+
+</style>
+
 <style is:global>
 
 	/* http://chrisw.org/web/chrisw/chrisw.css */
@@ -67,12 +72,6 @@ const { title, header_image } = Astro.props;
 		width: 800px;
 		margin: auto;
 		border: 1px solid black;
-	}
-
-	#global_title {
-		position: relative;
-		height: 100px;
-		background: #33A1DE
 	}
 
 	#global_navbar {

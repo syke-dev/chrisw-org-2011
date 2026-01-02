@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
 
-<BaseLayout title='chrisw' header_image='chrisw/ChriswLogo.jpg'>
+<BaseLayout title='chrisw'>
 
-	<Fragment slot="base_header">
-
-		<slot name="header" />
-
+	<Fragment slot="header_image">
+		<Image src='/org/logo.jpg' width={800} height={100} />
 	</Fragment>
 
 	<Fragment slot="base_body">

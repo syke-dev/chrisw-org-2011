@@ -1,16 +1,21 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
 
-<BaseLayout title='Blood Tide'>
+<BaseLayout title='Blood Tide' header_color='#33A1DE'>
 
-	<Fragment slot="base_header">
-
-		<img id = "btlogo" src = "/bloodtide/Logo.gif" />
-
-		<slot name="header" />
-
+	<Fragment slot="header_image">
+		<Image src='/bloodtide/logo.gif' width={226} height={132} clazz='bloodtide_logo' />
 	</Fragment>
+
+	<xFragment slot="base_header">
+
+		<ximg id = "btlogo" src = "/bloodtide/logo.gif" />
+
+		<xslot name="header" />
+
+	</xFragment>
 
 	<Fragment slot="base_body">
 
@@ -29,9 +34,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 </BaseLayout>
 
-<style>
+<style is:global>
 
-	#btlogo {
+	.bloodtide_logo {
 		left: 50%;
 		margin-left: -113px;
 		position: absolute;
