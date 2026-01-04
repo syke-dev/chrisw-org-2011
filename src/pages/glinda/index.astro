@@ -1,5 +1,6 @@
 ---
 import SharedLayout from '@layouts/SharedLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
 
 <SharedLayout title='glinda'>
@@ -49,7 +50,7 @@ import SharedLayout from '@layouts/SharedLayout.astro';
 				<li><b>Worker:</b> Any number of worker nodes to perform computations.
 			</ol>
 			
-			<center><img src = "ComputeFarm.jpg" width = "450"></center>
+			<center><Image src='/glinda/compute-farm.jpg' width={450} height={315} fit={Fit.Squeeze} /></center>
 			
 			<br>
 
@@ -78,7 +79,7 @@ import SharedLayout from '@layouts/SharedLayout.astro';
 			
 			<br><br>
 			
-			<img src = "DistributedSummation.jpg" width = "780">
+			<Image src='/glinda/distributed-summation.jpg' width={780} height={436} fit={Fit.Squeeze} />
 			
 		</div>
 

@@ -1,0 +1,81 @@
+---
+const { title, image, link } = Astro.props;
+import { default as Image, Fit } from '@components/Image.astro';
+---
+
+<div class='project'>
+
+	<Image class='img' src={image} width={300} height={220} fit={Fit.Squeeze} />
+
+	<div class='title'>{title}</div>
+
+	<div class='desc'>
+		<slot />
+	</div>
+
+	<a href={link} class='link'>More</a>
+	<!-- <a href = "" class = "link" onclick="return false"><strike>More</strike></a> -->
+
+</div>
+
+<style>
+
+	.project {
+		margin: auto;
+		width: 650px;
+		height: 220px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		position: relative;
+		border-left: 1px solid black;
+		border-bottom: 1px dashed black;
+	}
+
+	.project .img {
+		width: 300px;
+		height: 220px;
+		float: left;
+	}
+
+	.title {
+		margin-left: 320px;
+		margin-bottom: 30px;
+		border-bottom: 2px solid red;
+		font-family: Times New Roman, serif;
+		font-size: 1.2em;
+	}
+
+	.desc {
+		margin-left: 320px;
+	}
+
+	.link {
+		position: absolute;
+		top: 195px;
+		left: 590px;
+		border: 1px solid black;
+		padding-right: 7px;
+		padding-left: 7px;
+		text-decoration: none;
+		background-color: #BBA;
+	}
+
+	a:link {
+		color: black;
+	}
+
+	a:visited {
+		color: black;
+	}
+
+	a:hover {
+		color: red;
+	}
+
+	a:active {
+		color: red;
+		font-weight: bold;
+	}
+
+
+</style>

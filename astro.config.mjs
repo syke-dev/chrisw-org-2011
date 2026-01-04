@@ -28,4 +28,5 @@ export default defineConfig({
     icon(),
     mdx()
   ],
+  scopedStyleStrategy: 'where',
 });

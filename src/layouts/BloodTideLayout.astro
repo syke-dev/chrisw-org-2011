@@ -7,7 +7,9 @@ import ProjectNavigation from '@components/ProjectNavigation.astro';
 <BaseLayout title='Blood Tide' header_color='#33A1DE'>
 
 	<Fragment slot="header_image">
-		<Image src='/bloodtide/logo.gif' width={226} height={132} clazz='bloodtide_logo' />
+		<div class='bloodtide_logo'>
+			<Image src='/bloodtide/logo.gif' width={226} height={132} />
+		</div>
 	</Fragment>
 
 	<Fragment slot="base_body">
@@ -25,7 +27,7 @@ import ProjectNavigation from '@components/ProjectNavigation.astro';
 
 </BaseLayout>
 
-<style is:global>
+<style>
 
 	.bloodtide_logo {
 		left: 50%;
