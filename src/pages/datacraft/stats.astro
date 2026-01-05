@@ -1,87 +1,277 @@
 ---
+import DataCraftLayout from '@layouts/DataCraftLayout.astro';
+
+const basicOptions = function(chartTitle, xAxisTitle, yAxisTitle, showColorBox = false, stacked = false) {
+	return {
+		scales: {
+			x: {
+				title: {
+					display: true,
+					text: xAxisTitle,
+					stacked: stacked
+				}
+			},
+			y: {
+				title: {
+					display: true,
+					text: yAxisTitle,
+					stacked: stacked
+				}
+			}
+		},
+		plugins: {
+			title: {
+				display: true,
+				text: chartTitle
+			},
+			legend: {
+				labels: {
+					boxWidth: showColorBox ? 25 : 0
+				}
+			}
+		}
+	};
+};
+
+const enemies = [
+	{ name: 'Gunship', color: 'rgb(255, 159, 64)' },
+	{ name: 'Bombship', color: 'rgb(54, 162, 235)' },
+];
+
+const weapons = [
+	{ name: 'Bullets', color: 'rgb(255, 99, 132)' },
+	{ name: 'Missiles', color: 'rgb(75, 192, 192)' },
+	{ name: 'Lasers', color: 'rgb(153, 102, 255)' },
+];
+
+const enemyKillsChart = {
+	type: 'bar',
+	data: {
+		labels: [''],
+		datasets: [
+			{
+				label: enemies[0].name,
+				data: [3],
+				backgroundColor: enemies[0].color,
+				stack: 'Stack 0',
+				maxBarThickness: 100
+			},
+			{
+				label:enemies[1].name,
+				data: [2],
+				backgroundColor: enemies[1].color,
+				stack: 'Stack 1',
+				maxBarThickness: 100
+			}
+		]
+	},
+	options: basicOptions('Kills per Enemy', '', '', true, true)
+};
+
+const playerScoresChart = {
+	type: 'line',
+	data: {
+		labels: ['Game 0', 'Game 1', 'Game 2', 'Game 3', 'Game 4'],
+		datasets: [
+			{
+				label: 'Score',
+				data: [8, 2, 15, 3, 11],
+				backgroundColor: enemies[0].color,
+				stack: 'Stack 0',
+				maxBarThickness: 100
+			},
+		]
+	},
+	options: basicOptions('Player Scores per Game', '', '', true, true)
+};
+
+const enemiesAliveChart = {
+	type: 'bar',
+	data: {
+		labels: ['Game 0', 'Game 1', 'Game 2', 'Game 3', 'Game 4'],
+		datasets: [
+			{
+				label: enemies[0].name,
+				data: [0, 3, 0, 4, 1],
+				backgroundColor: enemies[0].color,
+				stack: 'Stack 0',
+				maxBarThickness: 100
+			},
+			{
+				label:enemies[1].name,
+				data: [4, 0, 11, 0, 1],
+				backgroundColor: enemies[1].color,
+				stack: 'Stack 1',
+				maxBarThickness: 100
+			}
+		]
+	},
+	options: basicOptions('Enemies Alive when Player Died', '', '', true, true)
+};
+
+const playerWeaponsFiredChart = {
+	type: 'bar',
+	data: {
+		labels: ['Game 0', 'Game 1', 'Game 2'],
+		datasets: [
+			{
+				label: weapons[0].name,
+				data: [52, 43, 61],
+				backgroundColor: weapons[0].color,
+				stack: 'Stack 0',
+				maxBarThickness: 100
+			},
+			{
+				label:weapons[1].name,
+				data: [16, 5, 24],
+				backgroundColor: weapons[1].color,
+				stack: 'Stack 1',
+				maxBarThickness: 100
+			},
+			{
+				label:weapons[2].name,
+				data: [37, 21, 29],
+				backgroundColor: weapons[2].color,
+				stack: 'Stack 2',
+				maxBarThickness: 100
+			}
+		]
+	},
+	options: basicOptions('Player Weapons Fired', '', '', true, true)
+};
+
+const enemyWeaponsFiredChart = {
+	type: 'bar',
+	data: {
+		labels: ['Game 0', 'Game 1', 'Game 2'],
+		datasets: [
+			{
+				label: weapons[0].name,
+				data: [16, 20, 9],
+				backgroundColor: weapons[0].color,
+				stack: 'Stack 0',
+				maxBarThickness: 100
+			},
+			{
+				label:weapons[1].name,
+				data: [11, 37, 19],
+				backgroundColor: weapons[1].color,
+				stack: 'Stack 1',
+				maxBarThickness: 100
+			},
+			{
+				label:weapons[2].name,
+				data: [16, 27, 23],
+				backgroundColor: weapons[2].color,
+				stack: 'Stack 2',
+				maxBarThickness: 100
+			}
+		]
+	},
+	options: basicOptions('Enemy Weapons Fired', '', '', true, true)
+};
+
+const charts = [
+	{ id: 'enemy-kills', linkText: 'Enemy Kills', def: enemyKillsChart },
+	{ id: 'player-scores', linkText: 'Player Scores', def: playerScoresChart },
+	{ id: 'enemies-alive', linkText: 'Enemies Alive', def: enemiesAliveChart },
+	{ id: 'player-weapons-fired', linkText: 'Player Weapons Fired', def: playerWeaponsFiredChart },
+	{ id: 'enemy-weapons-fired', linkText: 'Enemy Weapons Fired', def: enemyWeaponsFiredChart },
+];
+
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<DataCraftLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
-    
-    <title> DataCraft </title>
-    
-    <link rel = stylesheet type = "text/css" href = "datacraft.css" />
-    
-    <script type = "text/javascript" src = "datacraft.js"></script>
-    <script type = "text/javascript" src = "queries.js"></script>
-    <script type = "text/javascript" src = "shared/fusioncharts/fusioncharts.js"></script>
-       
-  </head>
+	<Fragment slot="body">
 
-  <body>
+		<div style = "float: left; position: relative; height: 530px">
 
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-    
-      <div style = "float: left; position: relative; height: 530px">
+			<div id = "page_queries">
+			
+				<b> Queries </b>
 
-        <div id = "page_queries">
-        
-          <b> Queries </b>
-          
-          <br><hr>
+				{charts.map((chart) => (
+					<br><hr>
+					<a class='datacraft_chart_button' data-chart-id={chart.id}>
+						<span>{chart.linkText}</span>
+					</a>
+				))}
 
-          <a href = "javascript:query_enemy_kills();"
-            onmouseover= "javascript:desc('< Number of Kills per Enemy Type >')"
-            onmouseout = "javascript:desc_default()" >
+			</div>
 
-          Enemy Kills </a><br><hr>
+			<div id='chart_container'>
 
-          <a href = "javascript:query_player_scores();"
-            onmouseover= "javascript:desc('< Player Scores Over Time >')"
-            onmouseout = "javascript:desc_default()" >
+				{charts.map((chart) => (
+					<canvas id={chart.id} class='chart'></canvas>
+				))}
 
-          Player Scores </a><br><hr>
+			</div>
 
-          <a href = "javascript:query_enemies_on_board();"
-            onmouseover= "javascript:desc('< Number of Enemy Types on the Board at the Time of a Player\'s Death Per Game >')"
-            onmouseout = "javascript:desc_default()" >
+			
+			
+		</div>
 
-          Enemies on Board </a><br><hr>
+	</Fragment>
+	
+</DataCraftLayout>
 
-          <a href = "javascript:query_player_wep_freq();"
-            onmouseover= "javascript:desc('< Player Weapon Use Frequency >')"
-            onmouseout = "javascript:desc_default()" >
+<style>
 
-          Player Weapon Frequency </a><br><hr>
+	#page_queries {
+		position: absolute;
+		left: 25px;
+		top: 25px;
+		width: 125px;
+		height: 475px;
+	}
 
-          <a href = "javascript:query_enemy_wep_freq();"
-            onmouseover= "javascript:desc('< Enemy Weapon Use Frequency >')"
-            onmouseout = "javascript:desc_default()" >
+	#page_queries_desc {
+		position: absolute;
+		top: 25px;
+		left: 200px;
+		width: 550px;
+		height: 50px;
+	}
 
-          Enemy Weapon Frequency </a><br><hr>
+	#chart_container {
+		position: absolute;
+		top: 100px;
+		left: 200px;
+		width: 550px;
+		height: 400px;
+	}
 
-        </div>
+</style>
 
-        <div id = "page_queries_desc"></div>
-        
-        <div id = "page_fusion_chart"></div>
-        
-        <script type="text/javascript">
-          desc_default();
-          query_player_scores();
-        </script>
+<script define:vars={{ charts }}>
+	window.charts = charts;
+</script>
 
-      </div>
-      
-      {% include datacraft/project_navigation.html %}
+<script>
 
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
+	// import { Chart } from 'chart.js';
+	import Chart from 'chart.js/auto';
 
-</html>
+	window.chooseChart = function(targetChartId) {
+		for (var chart of charts) {
+			const isChart = targetChartId == chart.id;
+			chart.canvas.style.display = isChart ? 'block' : 'none';
+		}
+	};
+
+	for (var chart of charts) {
+		chart.canvas = document.getElementById(chart.id);
+		chart.js = new Chart(chart.canvas, chart.def);
+	}
+
+	// Add onclick for each chart link
+	const links = document.querySelectorAll('[data-chart-id]');
+
+	for (var link of links) {
+		link.href = `javascript:chooseChart('${link.dataset.chartId}')`;
+	}
+
+	chooseChart(charts[0].id);
+
+</script>

@@ -1,1 +1,0 @@
-<chart caption = "Player Scores Over Time" xAxisName="Game #" yAxisName="Score" showValues="0"><categories><category label='0' /><category label='1' /><category label='2' /><category label='3' /><category label='4' /></categories><dataset seriesName='Player #1'><set value ='8' /><set value ='2' /><set value ='15' /><set value ='3' /><set value ='11' /></dataset></chart>
