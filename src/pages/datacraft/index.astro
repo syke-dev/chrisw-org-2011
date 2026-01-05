@@ -1,72 +1,52 @@
 ---
+import DataCraftLayout from '@layouts/DataCraftLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<DataCraftLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
-    
-    <link rel = "stylesheet" type = "text/css" href = "datacraft.css" />
+	<Fragment slot="body">
 
-    <title> DataCraft </title>
-  
-  </head>
-  
-  <body>
+		<div id = "gamehome_content">
+		
+			<div id = "column_left">
+			
+			<h1> Overview </h1>
+			
+			<p>DataCraft is a database project aimed at using statistics from play-throughs
+			to balance a shoot 'em up game. It is meant to speed up the process of game-balancing, 
+			by finding problem areas that game developers can focus their efforts towards.</p>
+	
+			<h1> Balancing </h1>
+			
+			<p>DataCraft is a two part process, starting with data-mining:
+			statistics from all play-throughs of our shoot 'em up game are automatically 
+			recorded in our database. These statistics include which ship the player chose, 
+			which weapons the players used, how far they got through the game before losing, etc.</p> 
+			
+			<p>The next step in the DataCraft process would be analyzing the repository of data 
+			that is created after players have completed a reasonable amount of games. 
+			We could look at the repository for any number of game balance issues.
+			For example, we could look for enemies that are too strong;
+			if one type of enemy ship has the majority of kills, 
+			then we could focus our efforts on balancing that particular ship type.</p>
+			
+			</div>
+			
+			<div id = "column_right" style = "text-align: center;">
+			
+			<a href = "/datacraft/stats">
+				<Image src='/datacraft/charts/player-scores.jpg' width={610} height={410} fit={Fit.Squeeze} />
+			</a>
+			
+			<br>
+			
+			<p><a href = "/datacraft/download">Download Game</a></p>
 
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "gamehome_content">
-      
-        <div id = "column_left">
-        
-          <h1> Overview </h1>
-          
-          <p>DataCraft is a database project aimed at using statistics from play-throughs
-          to balance a shoot 'em up game. It is meant to speed up the process of game-balancing, 
-          by finding problem areas that game developers can focus their efforts towards.</p>
-   
-          <h1> Balancing </h1>
-          
-          <p>DataCraft is a two part process, starting with data-mining:
-          statistics from all play-throughs of our shoot 'em up game are automatically 
-          recorded in our database. These statistics include which ship the player chose, 
-          which weapons the players used, how far they got through the game before losing, etc.</p> 
-          
-          <p>The next step in the DataCraft process would be analyzing the repository of data 
-          that is created after players have completed a reasonable amount of games. 
-          We could look at the repository for any number of game balance issues.
-          For example, we could look for enemies that are too strong;
-          if one type of enemy ship has the majority of kills, 
-          then we could focus our efforts on balancing that particular ship type.</p>
-        
-        </div>
-        
-        <div id = "column_right" style = "text-align: center;">
-        
-          <a href = "stats.html">
-            <img id = "main_video" src = "PlayerScores.jpg"></img>
-          </a>
-          
-          <br>
-        
-          <p><a href = "download.html">Download Game</a></p>
+			</div>
+			
+		</div>
 
-        </div>
-        
-      </div>
-      
-      {% include datacraft/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
+	</Fragment>
 
-</html>
+</DataCraftLayout>

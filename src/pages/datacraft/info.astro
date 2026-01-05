@@ -1,67 +1,47 @@
 ---
+import DataCraftLayout from '@layouts/DataCraftLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<DataCraftLayout>
 
-  <head>
-  
-    {% include chrisw/header.html %}
+	<Fragment slot="body">
+		
+		<div id = "gameinfo_content">
+		
+			<h2> DataCraft the Game </h2>
+			
+			<p>DataCraft the Game is a shoot 'em up built on top of XNA 4.0.
+			The player has access to three different types of missiles.
+			The first missile type has low damage, but high fire rate; the second has medium
+			damage and medium fire rate; and the third has a high fire rate, but slow fire rate.
+			The player battles against never-ending waves of enemies. Each wave of enemies that spawns constitutes a level.
+			Each level is progressively harder than the last: featuring more enemies and eventually harder enemy types.
+			The player has 50 health for the entire game. Once the player loses all his health, the game is over.
+			When this happens, the player's stats are automatically uploaded to our servers and the game restarts from level 1.<p>
+			
+			<div class = "thumbnails">
+				<Image src='/datacraft/levels/level-1.jpg' width={212} height={132} fit={Fit.Squeeze} link={true} />
+				<Image src='/datacraft/levels/level-3.jpg' width={212} height={132} fit={Fit.Squeeze} link={true} />
+			</div>
+			
+			<h2> Tracked Stats </h2>
+			
+			<div class = "nopad">
+				<ul>
+					<li>Player:</li>
+					<ul><li>IP address</li></ul>
+					<li>Game:</li>
+					<ul><li>Final Score</li><li>Runtime</li><li>Date</li><li>Version</li></ul>
+					<li>Enemy Ships:</li>
+					<ul><li>Build Time</li><li>Death Time</li><li>Ship Type</li><li>Level</li></ul>
+					<li>Missiles:</li>
+					<ul><li>Build Time</li><li>Death Time</li><li>Damage</li><li>Target</li><li>Owner</li></ul>
+				</ul>
+			</div>
 
-    <link rel = "stylesheet" type = "text/css" href = "datacraft.css" />
+		</div>
 
-    <title> DataCraft </title>
-  
-  </head>
-  
-  <body>
+	</Fragment>
 
-    <div id = "global_mainarea">
-      
-      {% include chrisw/title.html %}
-      {% include chrisw/navbar.html %}
-      
-      <div id = "gameinfo_content">
-      
-        <h2> DataCraft the Game </h2>
-        
-        <p>DataCraft the Game is a shoot 'em up built on top of XNA 4.0.
-        The player has access to three different types of missiles.
-        The first missile type has low damage, but high fire rate; the second has medium
-        damage and medium fire rate; and the third has a high fire rate, but slow fire rate.
-        The player battles against never-ending waves of enemies. Each wave of enemies that spawns constitutes a level.
-        Each level is progressively harder than the last: featuring more enemies and eventually harder enemy types.
-        The player has 50 health for the entire game. Once the player loses all his health, the game is over.
-        When this happens, the player's stats are automatically uploaded to our servers and the game restarts from level 1.<p>
-        
-        <div class = "thumbnails">
-          <a href = "DataCraftGame.jpg"><img src = "DataCraftGame.jpg" /></a>
-          <a href = "DataCraftGame2.jpg"><img src = "DataCraftGame2.jpg" /></a>
-        </div>
-        
-        <h2> Tracked Stats </h2>
-        
-        <div class = "nopad">
-          <ul>
-            <li>Player:</li>
-              <ul><li>IP address</li></ul>
-            <li>Game:</li>
-              <ul><li>Final Score</li><li>Runtime</li><li>Date</li><li>Version</li></ul>
-            <li>Enemy Ships:</li>
-              <ul><li>Build Time</li><li>Death Time</li><li>Ship Type</li><li>Level</li></ul>
-            <li>Missiles:</li>
-              <ul><li>Build Time</li><li>Death Time</li><li>Damage</li><li>Target</li><li>Owner</li></ul>
-          </ul>
-        </div>
-
-      </div>
-      
-      {% include datacraft/project_navigation.html %}
-    
-    </div>
-    
-    {% include chrisw/footer.html %}
-    
-  </body>
-
-</html>
+</DataCraftLayout>

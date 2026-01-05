@@ -1,5 +1,6 @@
 ---
 import SharedLayout from '@layouts/SharedLayout.astro';
+import { default as Image, Fit } from '@components/Image.astro';
 ---
 
 <SharedLayout title='chrisw'>
@@ -7,7 +8,7 @@ import SharedLayout from '@layouts/SharedLayout.astro';
 	<Fragment slot="body">
 
 		<div id = "home">
-			<img id = "me" src = "blindman/ChrisPlaying.jpg" />
+			<img id = "me" src = "blindman/chris-playing.jpg" /><Image src='/wattbodies/robots/hoveroid.png' width={100} height={100} fit={Fit.Squeeze} />
 			Welcome to the portfolio of <b>Chris Williams</b>
 			<br><br>
 			I am a Worcester Polytechnic Institute graduate, with a B.S. in Interactive Media and Game Development and a minor in Computer Science.

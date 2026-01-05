@@ -4,10 +4,10 @@ import { default as Image, Fit } from '@components/Image.astro';
 import ProjectNavigation from '@components/ProjectNavigation.astro';
 ---
 
-<BaseLayout title='Blind Man'>
+<BaseLayout title='Datacraft'>
 
 	<Fragment slot="header_image">
-		<Image src='/blindman/logo.jpg' width={800} height={100} />
+		<Image src='/datacraft/banner.jpg' width={800} height={100} />
 	</Fragment>
 
 	<Fragment slot="base_body">
@@ -15,8 +15,10 @@ import ProjectNavigation from '@components/ProjectNavigation.astro';
 		<slot name="body" />
 
 		<ProjectNavigation links={[
-			['/blindman', 'Home'],
-			['/blindman/info', 'Info']
+			['/datacraft', 'Home'],
+			['/datacraft/info', 'Info'],
+			['/datacraft/stats', 'Stats'],
+			['/datacraft/download', 'Download'],
 		]} />
 
 	</Fragment>
