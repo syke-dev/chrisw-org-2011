@@ -1,0 +1,53 @@
+---
+
+// Example: <Video src='/wattbodies/playthrough.video.md' />
+
+import { marked } from 'marked';
+
+interface Props {
+	allow?: string;
+	allowFullScreen?: Boolean;
+	class?: string;
+	frameBorder?: string;
+	height: Number;
+	src: string;
+	style?: string;
+	title?: string;
+	width: Number;
+}
+
+const {
+	allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+	allowFullScreen = true,
+	class: className,
+	frameBorder = "0",
+	height,
+	src,
+	style = "border: none",
+	title,
+	width
+} = Astro.props;
+
+var url = src;
+
+if (src.endsWith(".video.md")) {
+	const videoFiles = await import.meta.glob('/src/assets/**/*.video.md');
+	const { frontmatter } = await videoFiles[`/src/assets${src}`]();
+	url = frontmatter.url;
+}
+
+---
+
+<iframe
+	allow={allow}
+	allowfullscreen={allowFullScreen}
+	class={className}
+	frameborder={frameBorder}
+	height={height}
+	src={url}
+	style={style}
+	title={title}
+	width={width}
+>
+Unsupported Video.
+</iframe>
